@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sundaram Rai - Portfolio</title>
+    <meta
+      name="description"
+      content="Portfolio of Sundaram Rai, a driven software developer with expertise in full-stack development."
+    />
+    <meta
+      name="keywords"
+      content="Sundaram Rai, portfolio, software developer, full-stack development"
+    />
+    <meta name="author" content="Sundaram Rai" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {},
+        },
+      };
+    </script>
+    <style type="text/tailwindcss">
+      @layer utilities {
+        .content-auto {
+          content-visibility: auto;
+        }
+      }
+    </style>
+  </head>
+  <body
+    class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-200"
+  >
+    <div
+      id="loading"
+      class="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 z-50"
+    >
+      <div
+        class="animate-spin rounded-full h-32 w-32 border-t-4 border-blue-600"
+      ></div>
+    </div>
+    <!-- Navbar -->
+    <div class="container mx-auto px-4 py-8 max-w-5xl">
+      <!-- Header with Navigation -->
+      <header class="flex justify-between items-center mb-16">
+        <div class="text-2xl font-bold">SR.</div>
+        <nav class="flex items-center space-x-6">
+          <button
+            onclick="toggleTheme()"
+            class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors"
+          >
+            <i class="fas fa-moon dark:hidden"></i>
+            <i class="fas fa-sun hidden dark:inline"></i>
+          </button>
+          <a
+            href="mailto:sundaramrai02@gmail.com"
+            class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+          >
+            <i class="fas fa-envelope"></i>
+          </a>
+          <a
+            href="https://github.com/sundaramrai"
+            class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+            target="_blank"
+          >
+            <i class="fab fa-github"></i>
+          </a>
+          <a
+            href="https://linkedin.com/in/sundaramrai"
+            class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+            target="_blank"
+          >
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a
+            href="./assets/docs/Sundaram Resume FP.pdf"
+            download
+            class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+            title="View Resume"
+            target="_blank"
+          >
+            <i class="fas fa-file-download"></i>
+          </a>
+        </nav>
+      </header>
+
+      <!-- Hero Section -->
+      <section class="mb-20">
+        <h1 id="typed-text" class="text-5xl font-bold mb-6"></h1>
+        <p
+          class="text-xl text-gray-600 dark:text-gray-400 max-w-2xl leading-relaxed"
+        >
+          A driven software developer with expertise in full-stack development,
+          passionate about building intuitive and efficient web applications.
+          Currently based in Mumbai, India.
+        </p>
+        <div class="mt-6 flex space-x-4">
+          <a
+            href="mailto:sundaramrai02@gmail.com"
+            class="text-blue-600 dark:text-blue-400 hover:underline"
+            >sundaramrai02@gmail.com</a
+          >
+          <span class="text-gray-400">|</span>
+          <a
+            href="tel:+919665153365"
+            class="text-blue-600 dark:text-blue-400 hover:underline"
+            >+91 9665153365</a
+          >
+        </div>
+      </section>
+
+      <!-- Experience Section -->
+      <section class="mb-20">
+        <h2
+          class="text-2xl font-bold mb-6 border-b border-gray-200 dark:border-gray-700 pb-2"
+        >
+          Experience
+        </h2>
+        <div class="space-y-8">
+          <div class="border-l-2 border-blue-500 pl-4">
+            <h3 class="font-bold text-lg">
+              Software Developer | Tata Steel Limited
+            </h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">
+              Aug 2023 - Jan 2024
+            </p>
+            <p class="text-gray-700 dark:text-gray-300">
+              Built a full-stack app with React.js and Node.js to optimize
+              machine utilization by visualizing production metrics, automating
+              data collection, and delivering real-time insights for improved
+              decision-making and efficiency.
+            </p>
+          </div>
+          <div class="border-l-2 border-blue-500 pl-4">
+            <h3 class="font-bold text-lg">Web Developer | Zidio Development</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">
+              Jun 2024 - Sep 2024
+            </p>
+            <p class="text-gray-700 dark:text-gray-300">
+              Developed a Resume Builder and Job Portal using the MERN stack,
+              optimizing user experience, data handling, and job search
+              features. Strengthened technical skills in full-stack development
+              and real-time database integration.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section class="mb-20">
+        <h2
+          class="text-2xl font-bold mb-6 border-b border-gray-200 dark:border-gray-700 pb-2"
+        >
+          Projects
+        </h2>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div
+            class="p-6 rounded-lg bg-gray-50 dark:bg-gray-800 shadow-sm hover:shadow-md transition-shadow"
+          >
+            <h3 class="font-bold text-lg mb-2">LingoLeap</h3>
+            <p class="text-gray-700 dark:text-gray-300 mb-4">
+              A full-stack web app using Node.js, Next.js, Tailwind CSS, and
+              MongoDB, designed to improve children's Hindi-speaking skills with
+              interactive lessons and exercises.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="px-2 py-1 text-sm bg-blue-100 dark:bg-blue-900 rounded"
+                >Next.js</span
+              >
+              <span
+                class="px-2 py-1 text-sm bg-blue-100 dark:bg-blue-900 rounded"
+                >Node.js</span
+              >
+              <span
+                class="px-2 py-1 text-sm bg-blue-100 dark:bg-blue-900 rounded"
+                >MongoDB</span
+              >
+              <span
+                class="px-2 py-1 text-sm bg-blue-100 dark:bg-blue-900 rounded"
+                >Tailwind CSS</span
+              >
+            </div>
+          </div>
+          <div
+            class="p-6 rounded-lg bg-gray-50 dark:bg-gray-800 shadow-sm hover:shadow-md transition-shadow"
+          >
+            <h3 class="font-bold text-lg mb-2">ClassTrack</h3>
+            <p class="text-gray-700 dark:text-gray-300 mb-4">
+              A student attendance management system built with Python, Django,
+              and SQLite, automating attendance tracking and report generation.
+              Features an intuitive interface for both teachers and students.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="px-2 py-1 text-sm bg-blue-100 dark:bg-blue-900 rounded"
+                >Python</span
+              >
+              <span
+                class="px-2 py-1 text-sm bg-blue-100 dark:bg-blue-900 rounded"
+                >Django</span
+              >
+              <span
+                class="px-2 py-1 text-sm bg-blue-100 dark:bg-blue-900 rounded"
+                >SQLite</span
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills Section -->
+      <section class="mb-20">
+        <h2
+          class="text-2xl font-bold mb-6 border-b border-gray-200 dark:border-gray-700 pb-2"
+        >
+          Skills & Education
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div>
+            <h3 class="font-bold text-lg mb-4">Technical Skills</h3>
+            <div class="space-y-4">
+              <div>
+                <h4 class="text-sm text-gray-600 dark:text-gray-400 mb-2">
+                  Frontend
+                </h4>
+                <div class="flex flex-wrap gap-2">
+                  <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded"
+                    >React.js</span
+                  >
+                  <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded"
+                    >Next.js</span
+                  >
+                  <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded"
+                    >Tailwind CSS</span
+                  >
+                  <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded"
+                    >Bootstrap</span
+                  >
+                </div>
+              </div>
+              <div>
+                <h4 class="text-sm text-gray-600 dark:text-gray-400 mb-2">
+                  Backend
+                </h4>
+                <div class="flex flex-wrap gap-2">
+                  <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded"
+                    >Node.js</span
+                  >
+                  <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded"
+                    >Django</span
+                  >
+                  <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded"
+                    >Python</span
+                  >
+                  <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded"
+                    >Golang</span
+                  >
+                </div>
+              </div>
+              <div>
+                <h4 class="text-sm text-gray-600 dark:text-gray-400 mb-2">
+                  Databases & Tools
+                </h4>
+                <div class="flex flex-wrap gap-2">
+                  <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded"
+                    >MongoDB</span
+                  >
+                  <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded"
+                    >MySQL</span
+                  >
+                  <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded"
+                    >Firebase</span
+                  >
+                  <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded"
+                    >Git</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <h3 class="font-bold text-lg mb-4">Education</h3>
+            <div class="space-y-4">
+              <div>
+                <h4 class="font-medium">B.E. in Computer Engineering</h4>
+                <p class="text-gray-600 dark:text-gray-400">
+                  Thakur College of Engineering and Technology
+                </p>
+                <p class="text-sm text-gray-600 dark:text-gray-400">
+                  CGPA: 9.12 | 2021 - Present
+                </p>
+              </div>
+              <div>
+                <h4 class="font-medium">Higher Secondary School Certificate</h4>
+                <p class="text-gray-600 dark:text-gray-400">
+                  New English Jr. College
+                </p>
+                <p class="text-sm text-gray-600 dark:text-gray-400">
+                  94.17% | 2021
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer
+        class="text-center text-gray-600 dark:text-gray-400 text-sm border-t border-gray-200 dark:border-gray-700 pt-8"
+      >
+        <p>© 2024 Sundaram Rai. All rights reserved.</p>
+      </footer>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button
+      id="backToTopButton"
+      onclick="scrollToTop()"
+      class="fixed bottom-4 right-4 p-3 bg-blue-600 dark:bg-blue-700 text-white rounded-full shadow-lg hover:bg-blue-700 dark:hover:bg-blue-800 transition-colors focus:outline-none"
+    >
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+
+      const text = "Sundaram Rai";
+      let index = 0;
+      function type() {
+        if (index < text.length) {
+          document.getElementById("typed-text").innerHTML += text.charAt(index);
+          index++;
+          setTimeout(type, 100);
+        }
+      }
+      window.onload = type;
+      // Show the "Back to Top" button when the user scrolls down
+      window.onscroll = function () {
+        let button = document.getElementById("backToTopButton");
+        if (
+          document.body.scrollTop > 200 ||
+          document.documentElement.scrollTop > 200
+        ) {
+          button.style.display = "block";
+        } else {
+          button.style.display = "none";
+        }
+      };
+
+      // Scroll smoothly to the top
+      function scrollToTop() {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      }
+
+      window.addEventListener("load", () => {
+        document.getElementById("loading").style.display = "none";
+      });
+      // Initialize theme on page load
+      function initTheme() {
+        if (
+          localStorage.getItem("darkMode") === "true" ||
+          (!("darkMode" in localStorage) &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches)
+        ) {
+          document.documentElement.classList.add("dark");
+        }
+      }
+
+      // Toggle theme function
+      function toggleTheme() {
+        const html = document.documentElement;
+        html.classList.toggle("dark");
+        localStorage.setItem("darkMode", html.classList.contains("dark"));
+      }
+
+      // Listen for system theme changes
+      window
+        .matchMedia("(prefers-color-scheme: dark)")
+        .addEventListener("change", (e) => {
+          if (!("darkMode" in localStorage)) {
+            if (e.matches) {
+              document.documentElement.classList.add("dark");
+            } else {
+              document.documentElement.classList.remove("dark");
+            }
+          }
+        });
+
+      // Initialize theme when page loads
+      initTheme();
+    </script>
+  </body>
+</html>

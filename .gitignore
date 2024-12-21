@@ -1,0 +1,13 @@
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Build output
+/dist
+/build
+/out
+
+# Tailwind CSS
+tailwind.config.js
+postcss.config.js
