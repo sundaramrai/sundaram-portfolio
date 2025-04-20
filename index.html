@@ -1,505 +1,711 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sundaram Rai - Portfolio</title>
-    <meta
-      name="description"
-      content="Portfolio of Sundaram Rai, a driven software developer with expertise in full-stack development."
-    />
-    <meta
-      name="keywords"
-      content="Sundaram Rai, portfolio, software developer, full-stack development"
-    />
-    <meta name="author" content="Sundaram Rai" />
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-    />
-    <script>
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {},
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sundaram Rai - Portfolio</title>
+  <meta name="description"
+    content="Portfolio of Sundaram Rai, a driven software developer with expertise in full-stack development." />
+  <meta name="keywords" content="Sundaram Rai, portfolio, software developer, full-stack development" />
+  <meta name="author" content="Sundaram Rai" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function () {
+      emailjs.init("STaOBifVaCgTkeiZH");
+    })();
+  </script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              50: '#E6F5FF',
+              100: '#CCE9FF',
+              200: '#99D3FF',
+              300: '#66BDFF',
+              400: '#33A7FF',
+              500: '#0091FF',
+              600: '#0074CC',
+              700: '#005799',
+              800: '#003A66',
+              900: '#001D33',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            heading: ['Poppins', 'sans-serif'],
+          },
+          animation: {
+            'float': 'float 3s ease-in-out infinite',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-10px)' },
+            }
+          },
+          textColor: {
+            'gradient': 'transparent',
+          },
         },
-      };
-    </script>
-    <style type="text/tailwindcss">
-      @layer utilities {
-        .content-auto {
-          content-visibility: auto;
+      },
+      plugins: [
+        function ({ addUtilities }) {
+          const newUtilities = {
+            '.content-auto': {
+              'content-visibility': 'auto',
+            },
+            '.text-gradient': {
+              'background-clip': 'text',
+              'background-image': 'linear-gradient(to right, #3b82f6, #a855f7)',
+              'color': 'transparent',
+            },
+            '.card-hover-effect': {
+              'transition-property': 'all',
+              'transition-duration': '300ms',
+              'transform': 'translateY(0)',
+              '&:hover': {
+                'transform': 'translateY(-8px)',
+              },
+            },
+            '.nav-link': {
+              'position': 'relative',
+              '&::after': {
+                'content': '""',
+                'position': 'absolute',
+                'width': '100%',
+                'transform': 'scaleX(0)',
+                'height': '2px',
+                'bottom': '0',
+                'left': '0',
+                'background-color': '#3b82f6',
+                'transition-property': 'transform',
+                'transition-duration': '300ms',
+              },
+              '&:hover::after': {
+                'transform': 'scaleX(1)',
+              },
+            },
+            '.section-divider': {
+              'position': 'relative',
+              'overflow': 'hidden',
+              'padding-top': '3rem',
+              'padding-bottom': '3rem',
+              '&::before': {
+                'content': '""',
+                'position': 'absolute',
+                'top': '0',
+                'left': '0',
+                'width': '100%',
+                'height': '4px',
+                'background-image': 'linear-gradient(to right, transparent, #3b82f6, transparent)',
+              },
+            },
+          };
+          addUtilities(newUtilities);
         }
-      }
-    </style>
-  </head>
-  <body
-    class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-200"
-  >
-    <div
-      id="loading"
-      class="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 z-50"
-    >
-      <div
-        class="animate-spin rounded-full h-32 w-32 border-t-4 border-blue-600"
-      ></div>
+      ],
+    };
+  </script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-200 font-sans">
+  <div id="loading" class="fixed inset-0 flex justify-center items-center bg-black bg-opacity-80 z-50">
+    <div class="flex flex-col items-center">
+      <div class="animate-spin rounded-full h-24 w-24 border-t-4 border-b-4 border-primary-500 mb-4"></div>
+      <p class="text-white text-xl font-medium tracking-wider">Loading...</p>
     </div>
-    <!-- Navbar -->
-    <div class="container mx-auto px-4 py-8 max-w-5xl">
-      <!-- Header with Navigation -->
-      <header class="flex justify-between items-center mb-16">
-        <div class="text-2xl font-bold">SR.</div>
-        <nav class="flex items-center space-x-6">
-          <button
-            onclick="toggleTheme()"
-            class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors"
-          >
-            <i class="fas fa-moon dark:hidden text-2xl"></i>
-            <i class="fas fa-sun hidden dark:inline text-2xl"></i>
-          </button>
-          <a
-            href="mailto:sundaramrai02@gmail.com"
-            class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-            title="Email"
-          >
-            <i class="fas fa-envelope text-2xl"></i>
-          </a>
-          <a
-            href="https://github.com/sundaramrai"
-            title="GitHub"
-            class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-            target="_blank"
-          >
-            <i class="fab fa-github text-2xl"></i>
-          </a>
-          <a
-            href="https://linkedin.com/in/sundaramrai"
-            class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-            title="LinkedIn"
-            target="_blank"
-          >
-            <i class="fab fa-linkedin text-2xl"></i>
-          </a>
-          <a
-            href="./assets/docs/Sundaram Resume FP.pdf"
-            download
-            class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-            title="Download Resume"
-            target="_blank"
-          >
-            <i class="fas fa-file-download text-2xl"></i>
-          </a>
-        </nav>
-      </header>
+  </div>
 
-      <!-- Hero Section -->
-      <section class="mb-20">
-        <h1 id="typed-text" class="text-5xl font-bold mb-6"></h1>
-        <p
-          class="text-xl text-gray-600 dark:text-gray-400 max-w-2xl leading-relaxed"
-        >
-          Software Engineer | Full-Stack Developer
-        </p>
-        <div class="mt-6 flex space-x-4">
-          <a
-            href="mailto:sundaramrai02@gmail.com"
-            class="text-blue-600 dark:text-blue-400 hover:underline"
-            >sundaramrai02@gmail.com</a
-          >
-          <span class="text-gray-400">|</span>
-          <a
-            href="tel:+919665153365"
-            class="text-blue-600 dark:text-blue-400 hover:underline"
-            >+91 9665153365</a
-          >
-        </div>
-      </section>
+  <div id="cursor"
+    class="fixed w-6 h-6 rounded-full bg-primary-500 bg-opacity-50 pointer-events-none z-50 transform -translate-x-1/2 -translate-y-1/2 mix-blend-difference hidden md:block">
+  </div>
 
-      <!-- Experience Section -->
-      <section class="mb-20">
-        <h2
-          class="text-2xl font-bold mb-6 border-b border-gray-200 dark:border-gray-700 pb-2"
-        >
-          Experience
-        </h2>
-        <div class="space-y-8">
-          <div class="border-l-2 border-blue-500 pl-4">
-            <h3 class="font-bold text-lg">
-              Software Developer | Tata Steel Limited
-            </h3>
-            <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">
-              Aug 2023 - Jan 2024
-            </p>
-            <p class="text-gray-700 dark:text-gray-300">
-              Built a full-stack app with React.js and Node.js to optimize
-              machine utilization by visualizing production metrics, automating
-              data collection, and delivering real-time insights for improved
-              decision-making and efficiency.
-            </p>
-          </div>
-          <div class="border-l-2 border-blue-500 pl-4">
-            <h3 class="font-bold text-lg">Web Developer | Zidio Development</h3>
-            <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">
-              Jun 2024 - Sep 2024
-            </p>
-            <p class="text-gray-700 dark:text-gray-300">
-              Developed a Resume Builder and Job Portal using the MERN stack,
-              optimizing user experience, data handling, and job search
-              features. Strengthened technical skills in full-stack development
-              and real-time database integration.
-            </p>
-          </div>
-        </div>
-      </section>
+  <nav id="navbar"
+    class="fixed top-0 left-0 w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg z-40 transition-all duration-300 border-b border-transparent">
+    <div class="container mx-auto px-6 py-4 max-w-6xl flex justify-between items-center">
+      <div class="text-2xl font-bold font-heading">
+        <span class="text-primary-500">S</span>R<span class="text-primary-500">.</span>
+      </div>
 
-      <!-- Projects Section -->
-      <section class="mb-20">
-        <h2
-          class="text-2xl font-bold mb-6 border-b border-gray-200 dark:border-gray-700 pb-2"
-        >
-          Projects
-        </h2>
-        <div class="grid md:grid-cols-2 gap-6">
+      <div class="hidden md:flex items-center space-x-8">
+        <a href="#home" class="nav-link hover:text-primary-500 transition-colors">Home</a>
+        <a href="#experience" class="nav-link hover:text-primary-500 transition-colors">Experience</a>
+        <a href="#projects" class="nav-link hover:text-primary-500 transition-colors">Projects</a>
+        <a href="#skills" class="nav-link hover:text-primary-500 transition-colors">Skills</a>
+        <a href="#contact" class="nav-link hover:text-primary-500 transition-colors">Contact</a>
+      </div>
+
+      <div class="flex items-center space-x-6">
+        <button onclick="toggleTheme()"
+          class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors focus:outline-none">
+          <i class="fas fa-moon dark:hidden text-xl"></i>
+          <i class="fas fa-sun hidden dark:inline text-xl"></i>
+        </button>
+
+        <button id="mobile-menu-button" class="md:hidden text-2xl">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div id="mobile-menu"
+    class="fixed inset-0 bg-white dark:bg-gray-900 z-40 transform translate-x-full transition-transform duration-300 md:hidden">
+    <div class="flex justify-end p-6">
+      <button id="close-menu" class="text-2xl">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div class="flex flex-col items-center space-y-8 pt-12">
+      <a href="#home" class="text-xl font-medium hover:text-primary-500 transition-colors">Home</a>
+      <a href="#experience" class="text-xl font-medium hover:text-primary-500 transition-colors">Experience</a>
+      <a href="#projects" class="text-xl font-medium hover:text-primary-500 transition-colors">Projects</a>
+      <a href="#skills" class="text-xl font-medium hover:text-primary-500 transition-colors">Skills</a>
+      <a href="#contact" class="text-xl font-medium hover:text-primary-500 transition-colors">Contact</a>
+      <div class="flex space-x-6 mt-12 pt-6 border-t border-gray-200 dark:border-gray-700">
+        <a href="mailto:sundaramrai02@gmail.com" class="hover:text-primary-500 transition-colors" title="Email">
+          <i class="fas fa-envelope text-xl"></i>
+        </a>
+        <a href="https://github.com/sundaramrai" title="GitHub" class="hover:text-primary-500 transition-colors"
+          target="_blank">
+          <i class="fab fa-github text-xl"></i>
+        </a>
+        <a href="https://linkedin.com/in/sundaramrai" class="hover:text-primary-500 transition-colors" title="LinkedIn"
+          target="_blank">
+          <i class="fab fa-linkedin text-xl"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <main class="container mx-auto px-6 py-8 max-w-6xl">
+    <section id="home" class="min-h-screen flex flex-col justify-center py-20">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="order-2 md:order-1">
           <div
-            class="p-6 rounded-lg bg-gray-50 dark:bg-gray-800 shadow-sm hover:shadow-md transition-shadow"
-          >
-            <h3 class="font-bold text-lg mb-2">LingoLeap</h3>
+            class="mb-2 inline-block px-3 py-1 bg-primary-50 dark:bg-primary-900/30 rounded-full text-primary-600 dark:text-primary-400 text-sm font-medium">
+            <span class="animate-pulse inline-block w-2 h-2 bg-primary-500 rounded-full mr-2"></span>
+            Available for new opportunities
+          </div>
+          <h1 id="typed-text" class="text-5xl md:text-6xl font-bold font-heading mb-6 text-gradient"></h1>
+          <p class="text-xl text-gray-600 dark:text-gray-400 max-w-2xl leading-relaxed mb-8">
+            Software Engineer | Full-Stack Developer | Creating elegant solutions to complex problems
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 sm:items-center mb-12">
+            <a href="#contact"
+              class="bg-primary-500 hover:bg-primary-600 text-white py-3 px-8 rounded-lg font-medium transition-all flex items-center justify-center gap-2">
+              Get in touch <i class="fas fa-arrow-right text-sm"></i>
+            </a>
+            <a href="./assets/docs/Sundaram Resume FP.pdf" download
+              class="border border-gray-300 dark:border-gray-700 hover:border-primary-500 dark:hover:border-primary-500 py-3 px-8 rounded-lg font-medium transition-all flex items-center justify-center gap-2">
+              Download CV <i class="fas fa-file-download text-sm"></i>
+            </a>
+          </div>
+          <div class="flex flex-wrap items-center gap-6">
+            <a href="mailto:sundaramrai02@gmail.com"
+              class="flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 transition-colors">
+              <i class="fas fa-envelope"></i> sundaramrai02@gmail.com
+            </a>
+            <a href="tel:+919665153365"
+              class="flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 transition-colors">
+              <i class="fas fa-phone"></i> +91 9665153365
+            </a>
+          </div>
+          <div class="flex space-x-6 mt-8">
+            <a href="https://github.com/sundaramrai" title="GitHub"
+              class="text-gray-600 dark:text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 transition-colors"
+              target="_blank">
+              <i class="fab fa-github text-2xl"></i>
+            </a>
+            <a href="https://linkedin.com/in/sundaramrai"
+              class="text-gray-600 dark:text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 transition-colors"
+              title="LinkedIn" target="_blank">
+              <i class="fab fa-linkedin text-2xl"></i>
+            </a>
+          </div>
+        </div>
+        <div class="order-1 md:order-2 flex justify-center">
+          <div
+            class="relative w-64 h-64 md:w-80 md:h-80 rounded-full bg-primary-100 dark:bg-primary-900/20 overflow-hidden shadow-xl animate-float">
+            <div
+              class="absolute -bottom-4 -right-4 w-full h-full bg-primary-200 dark:bg-primary-800/30 rounded-full transform translate-x-4 translate-y-4">
+            </div>
+            <div
+              class="absolute inset-4 bg-primary-50 dark:bg-primary-900/50 rounded-full flex items-center justify-center">
+              <span class="font-heading font-bold text-6xl text-primary-500">SR</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce hidden md:block">
+        <a href="#experience" class="text-gray-400 hover:text-primary-500 transition-colors">
+          <i class="fas fa-chevron-down text-xl"></i>
+        </a>
+      </div>
+    </section>
+
+    <section id="experience" class="section-divider">
+      <h2 class="text-3xl font-bold font-heading mb-8 text-center">
+        Professional <span class="text-gradient">Experience</span>
+      </h2>
+      <div class="max-w-4xl mx-auto">
+        <div
+          class="relative pl-8 ml-8 before:absolute before:left-0 before:top-0 before:bottom-0 before:w-px before:bg-gradient-to-b before:from-primary-500 before:to-blue-700">
+          <div class="relative mb-12 experience-card">
+            <div
+              class="absolute -left-12 rounded-full w-8 h-8 bg-primary-500 flex items-center justify-center text-white">
+              <i class="fas fa-briefcase text-sm"></i>
+            </div>
+            <div class="rounded-lg bg-white dark:bg-gray-800 shadow-lg p-6 card-hover-effect">
+              <div class="flex flex-wrap justify-between items-start mb-4">
+                <div>
+                  <h3 class="font-bold text-xl mb-1">Software Developer</h3>
+                  <p class="text-primary-500 font-medium">Tata Steel Limited</p>
+                </div>
+                <p class="text-sm text-gray-600 dark:text-gray-400 px-4 py-1 bg-gray-100 dark:bg-gray-700 rounded-full">
+                  Aug 2023 - Jan 2024
+                </p>
+              </div>
+              <p class="text-gray-700 dark:text-gray-300">
+                Built a full-stack app with React.js and Node.js to optimize
+                machine utilization by visualizing production metrics, automating
+                data collection, and delivering real-time insights for improved
+                decision-making and efficiency.
+              </p>
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span
+                  class="px-3 py-1 text-xs bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full">React.js</span>
+                <span
+                  class="px-3 py-1 text-xs bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 rounded-full">Node.js</span>
+                <span
+                  class="px-3 py-1 text-xs bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300 rounded-full">Data
+                  Visualization</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="relative mb-12 experience-card">
+            <div
+              class="absolute -left-12 rounded-full w-8 h-8 bg-primary-500 flex items-center justify-center text-white">
+              <i class="fas fa-laptop-code text-sm"></i>
+            </div>
+            <div class="rounded-lg bg-white dark:bg-gray-800 shadow-lg p-6 card-hover-effect">
+              <div class="flex flex-wrap justify-between items-start mb-4">
+                <div>
+                  <h3 class="font-bold text-xl mb-1">Web Developer</h3>
+                  <p class="text-primary-500 font-medium">Zidio Development</p>
+                </div>
+                <p class="text-sm text-gray-600 dark:text-gray-400 px-4 py-1 bg-gray-100 dark:bg-gray-700 rounded-full">
+                  Jun 2024 - Sep 2024
+                </p>
+              </div>
+              <p class="text-gray-700 dark:text-gray-300">
+                Developed a Resume Builder and Job Portal using the MERN stack,
+                optimizing user experience, data handling, and job search
+                features. Strengthened technical skills in full-stack development
+                and real-time database integration.
+              </p>
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span
+                  class="px-3 py-1 text-xs bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full">MERN
+                  Stack</span>
+                <span
+                  class="px-3 py-1 text-xs bg-yellow-100 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-300 rounded-full">UI/UX</span>
+                <span
+                  class="px-3 py-1 text-xs bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-300 rounded-full">Job
+                  Portal</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section-divider">
+      <h2 class="text-3xl font-bold font-heading mb-8 text-center">
+        Featured <span class="text-gradient">Projects</span>
+      </h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden project-card card-hover-effect">
+          <div class="h-48 bg-gradient-to-r from-blue-400 to-purple-500 relative overflow-hidden">
+            <div class="absolute inset-0 flex items-center justify-center">
+              <i class="fas fa-language text-white text-5xl opacity-50"></i>
+            </div>
+            <div class="absolute top-4 right-4">
+              <div class="flex space-x-2">
+                <a href="#"
+                  class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center text-white hover:bg-white/40 transition-colors">
+                  <i class="fab fa-github"></i>
+                </a>
+                <a href="#"
+                  class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center text-white hover:bg-white/40 transition-colors">
+                  <i class="fas fa-external-link-alt"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="font-bold text-xl mb-2">LingoLeap</h3>
             <p class="text-gray-700 dark:text-gray-300 mb-4">
               A full-stack web app using Node.js, Next.js, Tailwind CSS, and
               MongoDB, designed to improve children's Hindi-speaking skills with
               interactive lessons and exercises.
             </p>
-            <div class="flex flex-wrap gap-2">
+            <div class="flex flex-wrap gap-2 mb-4">
               <span
-                class="px-2 py-1 text-sm bg-blue-100 dark:bg-blue-900 rounded"
-                >Next.js</span
-              >
+                class="px-2 py-1 text-xs bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full skill-tag">Next.js</span>
               <span
-                class="px-2 py-1 text-sm bg-blue-100 dark:bg-blue-900 rounded"
-                >Node.js</span
-              >
+                class="px-2 py-1 text-xs bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 rounded-full skill-tag">Node.js</span>
               <span
-                class="px-2 py-1 text-sm bg-blue-100 dark:bg-blue-900 rounded"
-                >MongoDB</span
-              >
+                class="px-2 py-1 text-xs bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300 rounded-full skill-tag">MongoDB</span>
               <span
-                class="px-2 py-1 text-sm bg-blue-100 dark:bg-blue-900 rounded"
-                >Tailwind CSS</span
-              >
-            </div>
-          </div>
-          <div
-            class="p-6 rounded-lg bg-gray-50 dark:bg-gray-800 shadow-sm hover:shadow-md transition-shadow"
-          >
-            <h3 class="font-bold text-lg mb-2">ClassTrack</h3>
-            <p class="text-gray-700 dark:text-gray-300 mb-4">
-              A student attendance management system built with Python, Django,
-              and SQLite, automating attendance tracking and report generation.
-              Features an intuitive interface for both teachers and students.
-            </p>
-            <div class="flex flex-wrap gap-2">
-              <span
-                class="px-2 py-1 text-sm bg-blue-100 dark:bg-blue-900 rounded"
-                >Python</span
-              >
-              <span
-                class="px-2 py-1 text-sm bg-blue-100 dark:bg-blue-900 rounded"
-                >Django</span
-              >
-              <span
-                class="px-2 py-1 text-sm bg-blue-100 dark:bg-blue-900 rounded"
-                >SQLite</span
-              >
-            </div>
+                class="px-2 py-1 text-xs bg-teal-100 dark:bg-teal-900/30 text-teal-800 dark:text-teal-300 rounded-full skill-tag">Tailwind
+                CSS</span>
+
+</html>
+</div>
+<a href="#" class="text-primary-500 hover:text-primary-600 font-medium flex items-center gap-1">
+  Learn more <i class="fas fa-arrow-right text-sm"></i>
+</a>
+</div>
+</div>
+
+<div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden project-card card-hover-effect">
+  <div class="h-48 bg-gradient-to-r from-green-400 to-teal-500 relative overflow-hidden">
+    <div class="absolute inset-0 flex items-center justify-center">
+      <i class="fas fa-user-check text-white text-5xl opacity-50"></i>
+    </div>
+    <div class="absolute top-4 right-4">
+      <div class="flex space-x-2">
+        <a href="#"
+          class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center text-white hover:bg-white/40 transition-colors">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="#"
+          class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center text-white hover:bg-white/40 transition-colors">
+          <i class="fas fa-external-link-alt"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="p-6">
+    <h3 class="font-bold text-xl mb-2">ClassTrack</h3>
+    <p class="text-gray-700 dark:text-gray-300 mb-4">
+      A student attendance management system built with Python, Django,
+      and SQLite, automating attendance tracking and report generation.
+      Features an intuitive interface for both teachers and students.
+    </p>
+    <div class="flex flex-wrap gap-2 mb-4">
+      <span
+        class="px-2 py-1 text-xs bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full skill-tag">Python</span>
+      <span
+        class="px-2 py-1 text-xs bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 rounded-full skill-tag">Django</span>
+      <span
+        class="px-2 py-1 text-xs bg-amber-100 dark:bg-amber-900/30 text-amber-800 dark:text-amber-300 rounded-full skill-tag">SQLite</span>
+    </div>
+    <a href="#" class="text-primary-500 hover:text-primary-600 font-medium flex items-center gap-1">
+      Learn more <i class="fas fa-arrow-right text-sm"></i>
+    </a>
+  </div>
+</div>
+</div>
+</section>
+
+<section id="skills" class="section-divider">
+  <h2 class="text-3xl font-bold font-heading mb-8 text-center">
+    Skills & <span class="text-gradient">Education</span>
+  </h2>
+
+  <div class="grid md:grid-cols-2 gap-10">
+    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 card-hover-effect">
+      <h3 class="font-bold text-xl mb-6 flex items-center gap-3">
+        <span class="w-8 h-8 rounded-full bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center">
+          <i class="fas fa-laptop-code text-primary-500"></i>
+        </span>
+        Technical Skills
+      </h3>
+
+      <div class="space-y-6">
+        <div>
+          <h4 class="text-sm text-gray-600 dark:text-gray-400 mb-3 flex items-center gap-2">
+            <i class="fas fa-code text-primary-500"></i> Frontend
+          </h4>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1.5 bg-gray-100 dark:bg-gray-700 rounded-full skill-tag flex items-center gap-2">
+              <i class="fa-brands fa-react" style="color: #74c0fc"></i>
+              React.js
+            </span>
+            <span class="px-3 py-1.5 bg-gray-100 dark:bg-gray-700 rounded-full skill-tag flex items-center gap-2">
+              <img src="https://www.svgrepo.com/show/354113/nextjs-icon.svg" class="w-4 h-4" alt="Next.js" />
+              Next.js
+            </span>
+            <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded">
+              <i class="fa-brands fa-html5" style="color: #e34f26"></i>
+              HTML
+            </span>
+            <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded">
+              <i class="fa-brands fa-css3" style="color: #1572b6"></i> CSS
+            </span>
+            <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded">
+              <i class="fa-brands fa-angular" style="color: #dd0031"></i>
+              Angular
+            </span>
+            <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded">
+              <i class="fa-brands fa-bootstrap" style="color: #7952b3"></i>
+              Bootstrap
+            </span>
+            <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded">
+              <i class="fa-brands fa-js" style="color: #f7df1e"></i>
+              JavaScript
+            </span>
+            <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded inline-flex items-center">
+              <img src="https://www.svgrepo.com/show/354431/tailwindcss-icon.svg" class="w-4 h-4 mr-1"
+                alt="Tailwind CSS" />
+              Tailwind CSS
+            </span>
           </div>
         </div>
-      </section>
 
-      <!-- Skills Section -->
-      <section class="mb-20">
-        <h2
-          class="text-2xl font-bold mb-6 border-b border-gray-200 dark:border-gray-700 pb-2"
-        >
-          Skills & Education
-        </h2>
-        <div class="grid md:grid-cols-2 gap-8">
-          <div>
-            <h3 class="font-bold text-lg mb-4">Technical Skills</h3>
-            <div class="space-y-4">
-              <div>
-                <h4 class="text-sm text-gray-600 dark:text-gray-400 mb-2">
-                  Frontend
-                </h4>
-                <div class="flex flex-wrap gap-2">
-                  <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded">
-                    <i class="fa-brands fa-react" style="color: #74c0fc"></i>
-                    React.js
-                  </span>
-                  <span
-                    class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded inline-flex items-center"
-                  >
-                    <img
-                      src="https://www.svgrepo.com/show/354113/nextjs-icon.svg"
-                      class="w-4 h-4 mr-1"
-                      alt="Next.js"
-                    />
-                    Next.js
-                  </span>
-
-                  <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded">
-                    <i class="fa-brands fa-html5" style="color: #e34f26"></i>
-                    HTML
-                  </span>
-                  <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded">
-                    <i class="fa-brands fa-css3" style="color: #1572b6"></i> CSS
-                  </span>
-                  <!-- Angular -->
-                  <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded">
-                    <i class="fa-brands fa-angular" style="color: #dd0031"></i>
-                    Angular
-                  </span>
-                  <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded">
-                    <i
-                      class="fa-brands fa-bootstrap"
-                      style="color: #7952b3"
-                    ></i>
-                    Bootstrap
-                  </span>
-                  <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded">
-                    <i class="fa-brands fa-js" style="color: #f7df1e"></i>
-                    JavaScript
-                  </span>
-                  <span
-                    class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded inline-flex items-center"
-                  >
-                    <img
-                      src="https://www.svgrepo.com/show/354431/tailwindcss-icon.svg"
-                      class="w-4 h-4 mr-1"
-                      alt="Tailwind CSS"
-                    />
-                    Tailwind CSS
-                  </span>
-                </div>
-              </div>
-              <div>
-                <h4 class="text-sm text-gray-600 dark:text-gray-400 mb-2">
-                  Backend
-                </h4>
-                <div class="flex flex-wrap gap-2">
-                  <span
-                    class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded inline-flex items-center"
-                  >
-                    <img
-                      src="https://www.svgrepo.com/show/354119/nodejs-icon.svg"
-                      class="w-4 h-4 mr-1"
-                      alt="Node.js"
-                    />
-                    Node.js
-                  </span>
-                  <span
-                    class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded inline-flex items-center"
-                  >
-                    <img
-                      src="https://www.svgrepo.com/show/452091/python.svg"
-                      class="w-4 h-4 mr-1"
-                      alt="Python"
-                    />
-                    Python
-                  </span>
-                  <span
-                    class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded inline-flex items-center"
-                  >
-                    <img
-                      src="https://www.svgrepo.com/show/353657/django-icon.svg"
-                      class="w-4 h-4 mr-1"
-                      alt="Django"
-                    />
-                    Django
-                  </span>
-                  <span
-                    class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded inline-flex items-center"
-                  >
-                    <img
-                      src="https://img.icons8.com/?size=50&id=kg46nzoJrmTR&format=png"
-                      class="w-4 h-4 mr-1"
-                      alt="Express.js"
-                    />
-                    Express.js
-                  </span>
-                  <span
-                    class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded inline-flex items-center"
-                  >
-                    <img
-                      src="https://icon.icepanel.io/Technology/svg/PHP.svg"
-                      class="w-4 h-4 mr-1"
-                      alt="PHP"
-                    />
-                    PHP
-                  </span>  
-                </div>
-              </div>
-              <div>
-                <h4 class="text-sm text-gray-600 dark:text-gray-400 mb-2">
-                  Databases & Tools
-                </h4>
-                <div class="flex flex-wrap gap-2">
-                  <span
-                    class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded inline-flex items-center"
-                  >
-                    <img
-                      src="https://www.svgrepo.com/show/439231/mongodb.svg"
-                      class="w-4 h-4 mr-1"
-                      alt="MongoDB"
-                    />
-                    MongoDB
-                  </span>  
-                  <span
-                    class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded inline-flex items-center"
-                  >
-                    <img
-                      src="https://www.svgrepo.com/show/473731/mysql.svg"
-                      class="w-4 h-4 mr-1"
-                      alt="MySQL"
-                    />
-                    MySQL
-                  </span>  
-                  <span
-                    class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded inline-flex items-center"
-                  >
-                    <img
-                      src="https://www.svgrepo.com/show/373595/firebase.svg"
-                      class="w-4 h-4 mr-1"
-                      alt="Firebase"
-                    />
-                    Firebase
-                  </span> 
-                  <span
-                    class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded inline-flex items-center"
-                  >
-                    <img
-                      src="https://www.svgrepo.com/show/452210/git.svg"
-                      class="w-4 h-4 mr-1"
-                      alt="Git"
-                    />
-                    Git
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div>
-            <h3 class="font-bold text-lg mb-4">Education</h3>
-            <div class="space-y-4">
-              <div>
-                <h4 class="font-medium">B.E. in Computer Engineering</h4>
-                <p class="text-gray-600 dark:text-gray-400">
-                  Thakur College of Engineering and Technology
-                </p>
-                <p class="text-sm text-gray-600 dark:text-gray-400">
-                  CGPA: 9.12 | 2021 - Present
-                </p>
-              </div>
-              <div>
-                <h4 class="font-medium">Higher Secondary School Certificate</h4>
-                <p class="text-gray-600 dark:text-gray-400">
-                  New English Jr. College
-                </p>
-                <p class="text-sm text-gray-600 dark:text-gray-400">
-                  94.17% | 2021
-                </p>
-              </div>
-            </div>
+        <div>
+          <h4 class="text-sm text-gray-600 dark:text-gray-400 mb-3 flex items-center gap-2">
+            <i class="fas fa-server text-primary-500"></i> Backend
+          </h4>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded inline-flex items-center">
+              <img src="https://www.svgrepo.com/show/354119/nodejs-icon.svg" class="w-4 h-4 mr-1" alt="Node.js" />
+              Node.js
+            </span>
+            <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded inline-flex items-center">
+              <img src="https://www.svgrepo.com/show/452091/python.svg" class="w-4 h-4 mr-1" alt="Python" />
+              Python
+            </span>
+            <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded inline-flex items-center">
+              <img src="https://www.svgrepo.com/show/353657/django-icon.svg" class="w-4 h-4 mr-1" alt="Django" />
+              Django
+            </span>
+            <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded inline-flex items-center">
+              <img src="https://img.icons8.com/?size=50&id=kg46nzoJrmTR&format=png" class="w-4 h-4 mr-1"
+                alt="Express.js" />
+              Express.js
+            </span>
+            <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded inline-flex items-center">
+              <img src="https://icon.icepanel.io/Technology/svg/PHP.svg" class="w-4 h-4 mr-1" alt="PHP" />
+              PHP
+            </span>
           </div>
         </div>
-      </section>
 
-      <!-- Footer -->
-      <footer
-        class="text-center text-gray-600 dark:text-gray-400 text-sm border-t border-gray-200 dark:border-gray-700 pt-8"
-      >
-        <p>© 2024 Sundaram Rai. All rights reserved.</p>
-      </footer>
+        <div>
+          <h4 class="text-sm text-gray-600 dark:text-gray-400 mb-3 flex items-center gap-2">
+            <i class="fas fa-database text-primary-500"></i> Databases & Tools
+          </h4>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded inline-flex items-center">
+              <img src="https://www.svgrepo.com/show/439231/mongodb.svg" class="w-4 h-4 mr-1" alt="MongoDB" />
+              MongoDB
+            </span>
+            <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded inline-flex items-center">
+              <img src="https://www.svgrepo.com/show/473731/mysql.svg" class="w-4 h-4 mr-1" alt="MySQL" />
+              MySQL
+            </span>
+            <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded inline-flex items-center">
+              <img src="https://www.svgrepo.com/show/373595/firebase.svg" class="w-4 h-4 mr-1" alt="Firebase" />
+              Firebase
+            </span>
+            <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded inline-flex items-center">
+              <img src="https://www.svgrepo.com/show/452210/git.svg" class="w-4 h-4 mr-1" alt="Git" />
+              Git
+            </span>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <!-- Back to Top Button -->
-    <button
-      id="backToTopButton"
-      onclick="scrollToTop()"
-      class="fixed bottom-4 right-4 p-3 bg-blue-600 dark:bg-blue-700 text-white rounded-full shadow-lg hover:bg-blue-700 dark:hover:bg-blue-800 transition-colors focus:outline-none"
-    >
-      <i class="fas fa-arrow-up"></i>
-    </button>
+    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 card-hover-effect">
+      <h3 class="font-bold text-xl mb-6 flex items-center gap-3">
+        <span class="w-8 h-8 rounded-full bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center">
+          <i class="fas fa-graduation-cap text-primary-500"></i>
+        </span>
+        Education
+      </h3>
 
-    <script>
-      const text = "Sundaram Rai";
-      let index = 0;
-      function type() {
-        if (index < text.length) {
-          document.getElementById("typed-text").innerHTML += text.charAt(index);
-          index++;
-          setTimeout(type, 100);
-        }
-      }
-      window.onload = type;
-      // Show the "Back to Top" button when the user scrolls down
-      window.onscroll = function () {
-        let button = document.getElementById("backToTopButton");
-        if (
-          document.body.scrollTop > 200 ||
-          document.documentElement.scrollTop > 200
-        ) {
-          button.style.display = "block";
-        } else {
-          button.style.display = "none";
-        }
-      };
+      <div class="space-y-6">
+        <div class="border-l-2 border-primary-500 pl-4 py-2">
+          <h4 class="font-medium text-lg">B.E. in Computer Engineering</h4>
+          <p class="text-gray-600 dark:text-gray-400 flex items-center gap-2 mt-1">
+            <i class="fas fa-university text-sm"></i>
+            Thakur College of Engineering and Technology
+          </p>
+          <div class="flex items-center gap-4 mt-3">
+            <span
+              class="px-3 py-1 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-full text-sm">CGPA:
+              9.12</span>
+            <p class="text-sm text-gray-600 dark:text-gray-400">2021 - Present</p>
+          </div>
+        </div>
 
-      // Scroll smoothly to the top
-      function scrollToTop() {
-        window.scrollTo({
-          top: 0,
-          behavior: "smooth",
-        });
-      }
+        <div class="border-l-2 border-primary-500 pl-4 py-2">
+          <h4 class="font-medium text-lg">Higher Secondary School Certificate</h4>
+          <p class="text-gray-600 dark:text-gray-400 flex items-center gap-2 mt-1">
+            <i class="fas fa-school text-sm"></i>
+            New English Jr. College
+          </p>
+          <div class="flex items-center gap-4 mt-3">
+            <span
+              class="px-3 py-1 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-full text-sm">94.17%</span>
+            <p class="text-sm text-gray-600 dark:text-gray-400">2021</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-      window.addEventListener("load", () => {
-        document.getElementById("loading").style.display = "none";
-      });
-      // Initialize theme on page load
-      function initTheme() {
-        if (
-          localStorage.getItem("darkMode") === "true" ||
-          (!("darkMode" in localStorage) &&
-            window.matchMedia("(prefers-color-scheme: dark)").matches)
-        ) {
-          document.documentElement.classList.add("dark");
-        }
-      }
+<section id="contact" class="section-divider">
+  <h2 class="text-3xl font-bold font-heading mb-8 text-center">
+    Get in <span class="text-gradient">Touch</span>
+  </h2>
 
-      // Toggle theme function
-      function toggleTheme() {
-        const html = document.documentElement;
-        html.classList.toggle("dark");
-        localStorage.setItem("darkMode", html.classList.contains("dark"));
-      }
+  <div class="grid md:grid-cols-2 gap-10 max-w-4xl mx-auto">
+    <div>
+      <p class="text-gray-600 dark:text-gray-400 mb-6">
+        I'm always open to discussing new projects, opportunities or partnerships. Feel free to reach out to me through
+        any of the channels below.
+      </p>
 
-      // Listen for system theme changes
-      window
-        .matchMedia("(prefers-color-scheme: dark)")
-        .addEventListener("change", (e) => {
-          if (!("darkMode" in localStorage)) {
-            if (e.matches) {
-              document.documentElement.classList.add("dark");
-            } else {
-              document.documentElement.classList.remove("dark");
-            }
-          }
-        });
+      <div class="space-y-4">
+        <a href="mailto:sundaramrai02@gmail.com"
+          class="flex items-center gap-4 p-4 rounded-lg bg-white dark:bg-gray-800 shadow-md hover:shadow-lg transition-all">
+          <span
+            class="w-10 h-10 rounded-full bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center text-primary-500">
+            <i class="fas fa-envelope"></i>
+          </span>
+          <div>
+            <h3 class="font-medium text-sm text-gray-500 dark:text-gray-400">Email</h3>
+            <p class="text-gray-800 dark:text-gray-200">sundaramrai02@gmail.com</p>
+          </div>
+        </a>
 
-      // Initialize theme when page loads
-      initTheme();
-    </script>
-  </body>
+        <a href="tel:+919665153365"
+          class="flex items-center gap-4 p-4 rounded-lg bg-white dark:bg-gray-800 shadow-md hover:shadow-lg transition-all">
+          <span
+            class="w-10 h-10 rounded-full bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center text-primary-500">
+            <i class="fas fa-phone"></i>
+          </span>
+          <div>
+            <h3 class="font-medium text-sm text-gray-500 dark:text-gray-400">Phone</h3>
+            <p class="text-gray-800 dark:text-gray-200">+91 9665153365</p>
+          </div>
+        </a>
+
+        <a href="https://linkedin.com/in/sundaramrai" target="_blank"
+          class="flex items-center gap-4 p-4 rounded-lg bg-white dark:bg-gray-800 shadow-md hover:shadow-lg transition-all">
+          <span
+            class="w-10 h-10 rounded-full bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center text-primary-500">
+            <i class="fab fa-linkedin-in"></i>
+          </span>
+          <div>
+            <h3 class="font-medium text-sm text-gray-500 dark:text-gray-400">LinkedIn</h3>
+            <p class="text-gray-800 dark:text-gray-200">linkedin.com/in/sundaramrai</p>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+      <form id="contact-form" class="space-y-4">
+        <div>
+          <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Name</label>
+          <input type="text" id="name" name="name"
+            class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100"
+            placeholder="Your name" required>
+        </div>
+        <div>
+          <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Email</label>
+          <input type="email" id="email" name="email"
+            class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100"
+            placeholder="your@email.com" required>
+        </div>
+        <div>
+          <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Message</label>
+          <textarea id="message" name="message" rows="4"
+            class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100"
+            placeholder="Your message" required></textarea>
+        </div>
+        <button type="submit"
+          class="w-full bg-primary-500 hover:bg-primary-600 text-white py-3 px-6 rounded-lg font-medium transition-colors flex items-center justify-center gap-2">
+          Send Message <i class="fas fa-paper-plane"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="bg-gray-50 dark:bg-gray-800/50 mt-20 py-12">
+  <div class="container mx-auto px-6 max-w-6xl">
+    <div class="flex flex-col md:flex-row justify-between items-center">
+      <div class="mb-6 md:mb-0">
+        <div class="text-2xl font-bold font-heading">
+          <span class="text-primary-500">S</span>R<span class="text-primary-500">.</span>
+        </div>
+        <p class="text-gray-600 dark:text-gray-400 mt-2">Creating elegant solutions to complex problems.</p>
+      </div>
+
+      <div class="flex space-x-8">
+        <a href="#home" class="text-gray-600 dark:text-gray-400 hover:text-primary-500 transition-colors">Home</a>
+        <a href="#experience"
+          class="text-gray-600 dark:text-gray-400 hover:text-primary-500 transition-colors">Experience</a>
+        <a href="#projects"
+          class="text-gray-600 dark:text-gray-400 hover:text-primary-500 transition-colors">Projects</a>
+        <a href="#skills" class="text-gray-600 dark:text-gray-400 hover:text-primary-500 transition-colors">Skills</a>
+        <a href="#contact" class="text-gray-600 dark:text-gray-400 hover:text-primary-500 transition-colors">Contact</a>
+      </div>
+    </div>
+
+    <hr class="my-8 border-gray-200 dark:border-gray-700">
+
+    <div class="flex flex-col md:flex-row justify-between items-center">
+      <p class="text-sm text-gray-600 dark:text-gray-400">© 2025 Sundaram Rai. All rights reserved.</p>
+
+      <div class="flex space-x-6 mt-4 md:mt-0">
+        <a href="mailto:sundaramrai02@gmail.com"
+          class="text-gray-600 dark:text-gray-400 hover:text-primary-500 transition-colors" title="Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+        <a href="https://github.com/sundaramrai" title="GitHub"
+          class="text-gray-600 dark:text-gray-400 hover:text-primary-500 transition-colors" target="_blank">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://linkedin.com/in/sundaramrai"
+          class="text-gray-600 dark:text-gray-400 hover:text-primary-500 transition-colors" title="LinkedIn"
+          target="_blank">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button id="backToTopButton" onclick="scrollToTop()"
+  class="fixed bottom-4 right-4 p-3 bg-primary-500 text-white rounded-full shadow-lg hover:bg-primary-600 transition-colors focus:outline-none opacity-0 invisible">
+  <i class="fas fa-arrow-up"></i>
+</button>
+
+<script src="./js/main.js"></script>
+</body>
+
 </html>

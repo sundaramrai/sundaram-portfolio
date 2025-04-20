@@ -7,7 +7,3 @@ yarn-error.log
 /dist
 /build
 /out
-
-# Tailwind CSS
-tailwind.config.js
-postcss.config.js
