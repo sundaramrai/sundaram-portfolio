@@ -1,23 +1,36 @@
 {
-  "name": "portfolio",
+  "name": "sundaram-portfolio",
   "version": "1.0.0",
+  "description": "Sundaram Rai's portfolio website",
   "main": "index.js",
   "scripts": {
     "start": "live-server",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tailwindcss -i ./css/style.css -o ./dist/style.css --watch"
+    "build": "tailwindcss -i ./css/style.css -o ./dist/style.css --watch",
+    "dev": "vercel dev",
+    "deploy": "vercel deploy --prod"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
-  "description": "",
   "dependencies": {
     "autoprefixer": "^10.4.20",
     "postcss": "^8.4.49",
-    "tailwindcss": "^3.4.17"
+    "tailwindcss": "^3.4.17",
+    "gsap": "^3.12.2"
   },
   "devDependencies": {
-    "live-server": "^1.2.2"
+    "live-server": "^1.2.2",
+    "vercel": "^32.5.0"
+  },
+  "overrides": {
+    "uuid": "^9.0.0",
+    "glob": "^10.3.3"
+  },
+  "resolutions": {
+    "uuid": "^9.0.0",
+    "glob": "^10.3.3",
+    "inflight": "^2.0.0"
   }
 }

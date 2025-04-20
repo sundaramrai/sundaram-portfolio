@@ -25,19 +25,42 @@ function type() {
     }
 }
 
-function updateCursor(e) {
+let mouseX = 0;
+let mouseY = 0;
+let cursorX = 0;
+let cursorY = 0;
+let speed = 0.2;
+let animationFrame;
+function updateCursor() {
     const cursor = document.getElementById('cursor');
     if (cursor) {
-        gsap.to(cursor, {
-            duration: 0.5,
-            x: e.clientX,
-            y: e.clientY,
-            ease: "power3.out"
+        cursorX += (mouseX - cursorX) * speed;
+        cursorY += (mouseY - cursorY) * speed;
+        gsap.set(cursor, {
+            x: cursorX,
+            y: cursorY
         });
+        animationFrame = requestAnimationFrame(updateCursor);
     }
 }
 
-document.addEventListener('mousemove', updateCursor);
+function handleMouseMove(e) {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    if (!animationFrame) {
+        animationFrame = requestAnimationFrame(updateCursor);
+    }
+}
+
+function handleMouseLeave() {
+    if (animationFrame) {
+        cancelAnimationFrame(animationFrame);
+        animationFrame = null;
+    }
+}
+
+document.addEventListener('mousemove', handleMouseMove);
+document.addEventListener('mouseleave', handleMouseLeave);
 
 function setupMobileMenu() {
     const mobileMenuButton = document.getElementById('mobile-menu-button');
