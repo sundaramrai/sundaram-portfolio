@@ -1,3 +1,179 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.dark ::-webkit-scrollbar-track {
+    background: #1f2937;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #c5c5c5;
+    border-radius: 4px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+    background: #4b5563;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #3b82f6;
+}
+
+::selection {
+    background-color: rgba(59, 130, 246, 0.3);
+    color: currentColor;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.text-gradient {
+    background-image: linear-gradient(135deg, #3b82f6, #8b5cf6);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.elegant-hover-card {
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.elegant-hover-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.dark .elegant-hover-card {
+    box-shadow: 0 1px 3px rgba(255, 255, 255, 0.08), 0 1px 2px rgba(255, 255, 255, 0.16);
+}
+
+.dark .elegant-hover-card:hover {
+    box-shadow: 0 14px 28px rgba(255, 255, 255, 0.15), 0 10px 10px rgba(255, 255, 255, 0.12);
+}
+
+.shimmer {
+    background: linear-gradient(90deg,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.6) 50%,
+            rgba(255, 255, 255, 0) 100%);
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+}
+
+.dark .shimmer {
+    background: linear-gradient(90deg,
+            rgba(30, 41, 59, 0) 0%,
+            rgba(30, 41, 59, 0.6) 50%,
+            rgba(30, 41, 59, 0) 100%);
+    background-size: 200% 100%;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+.project-image-overlay {
+    opacity: 0;
+    background: rgba(59, 130, 246, 0.9);
+    transition: all 0.3s ease;
+}
+
+.project-card:hover .project-image-overlay {
+    opacity: 1;
+}
+
+.form-floating-label {
+    position: relative;
+}
+
+.form-floating-label input,
+.form-floating-label textarea {
+    height: 56px;
+    padding-top: 24px;
+    padding-bottom: 0;
+}
+
+.form-floating-label label {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    font-size: 12px;
+    color: #6b7280;
+    transition: all 0.2s ease;
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+.form-floating-label input:focus~label,
+.form-floating-label input:not(:placeholder-shown)~label,
+.form-floating-label textarea:focus~label,
+.form-floating-label textarea:not(:placeholder-shown)~label {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.nav-link-underline {
+    position: relative;
+}
+
+.nav-link-underline::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: #3b82f6;
+    transition: width 0.3s ease;
+}
+
+.nav-link-underline.active::after,
+.nav-link-underline:hover::after {
+    width: 100%;
+}
+
+.skill-bar {
+    height: 6px;
+    background: #e5e7eb;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.dark .skill-bar {
+    background: #374151;
+}
+
+.skill-progress {
+    height: 100%;
+    background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+    border-radius: 3px;
+    transform-origin: left;
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.dark .glass-card {
+    background: rgba(30, 41, 59, 0.7);
+    border: 1px solid rgba(30, 41, 59, 0.3);
+}
