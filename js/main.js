@@ -298,12 +298,18 @@ class ScrollManager {
             duration: CONFIG.ANIMATION_DURATION.MEDIUM,
             ease: "power2.out"
         });
-
-        gsap.to(window, {
-            duration: 1.5,
-            scrollTo: 0,
-            ease: "power4.out"
-        });
+        if (gsap.plugins?.ScrollToPlugin) {
+            gsap.to(window, {
+                duration: 1.5,
+                scrollTo: { y: 0, autoKill: false },
+                ease: "power4.out"
+            });
+        } else {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
     }
 
     setupNavbarScroll() {
@@ -950,6 +956,17 @@ class PortfolioApp {
             });
     }
 }
+
+window.scrollToTop = function () {
+    if (portfolioApp?.scrollManager) {
+        portfolioApp.scrollManager.scrollToTop();
+    } else {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
+};
 
 window.toggleTheme = function () {
     if (portfolioApp?.themeManager) {
