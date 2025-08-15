@@ -13,6 +13,25 @@ const CONFIG = {
     }
 };
 
+const throttle = window.throttle || ((func, delay) => {
+    let lastCall = 0;
+    return (...args) => {
+        const now = Date.now();
+        if (now - lastCall >= delay) {
+            lastCall = now;
+            func(...args);
+        }
+    };
+});
+
+const debounce = window.debounce || ((func, delay) => {
+    let timeoutId;
+    return (...args) => {
+        clearTimeout(timeoutId);
+        timeoutId = setTimeout(() => func(...args), delay);
+    };
+});
+
 const DOM = {
     body: document.body,
     html: document.documentElement,
@@ -931,6 +950,12 @@ class PortfolioApp {
             });
     }
 }
+
+window.toggleTheme = function () {
+    if (portfolioApp?.themeManager) {
+        portfolioApp.themeManager.toggle();
+    }
+};
 
 let portfolioApp;
 
