@@ -1,6 +1,6 @@
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
-const debounce = (func, wait) => {
+window.debounce = (func, wait) => {
     let timeout;
     return function executedFunction(...args) {
         const later = () => {
@@ -12,7 +12,7 @@ const debounce = (func, wait) => {
     };
 };
 
-const throttle = (func, limit) => {
+window.throttle = (func, limit) => {
     let inThrottle;
     return function () {
         const args = arguments;
