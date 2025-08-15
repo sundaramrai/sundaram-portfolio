@@ -13,7 +13,6 @@ self.addEventListener('install', event => {
     event.waitUntil(
         caches.open(CACHE_NAME)
             .then(cache => {
-                console.log('Cache opened');
                 return cache.addAll(urlsToCache);
             })
             .then(() => self.skipWaiting())
@@ -49,12 +48,11 @@ self.addEventListener('fetch', event => {
                             return response;
                         }
                         const responseToCache = response.clone();
-                        caches.open(CACHE_NAME)
+                        return caches.open(CACHE_NAME)
                             .then(cache => {
                                 cache.put(event.request, responseToCache);
+                                return response;
                             });
-
-                        return response;
                     })
                     .catch(() => {
                         if (event.request.url.indexOf('.html') > -1 ||

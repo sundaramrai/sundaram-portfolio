@@ -748,7 +748,7 @@ class ContactFormManager {
 
     handleSubmitError(submitButton, formStatus, successMessage, errorMessage, error) {
         this.resetFormAppearance(submitButton);
-        console.error('Email error:', error);
+        console.error(error);
         this.showMessage(formStatus, successMessage, errorMessage, false);
     }
 
@@ -855,9 +855,9 @@ class ServiceWorkerManager {
 
         try {
             const registration = await navigator.serviceWorker.register('/service-worker.js');
-            console.log('Service Worker registered with scope:', registration.scope);
+            console.log(registration.scope);
         } catch (error) {
-            console.error('Service Worker registration failed:', error);
+            console.error(error);
         }
     }
 }
@@ -963,7 +963,7 @@ window.addEventListener("load", () => {
     try {
         portfolioApp.handlePageLoad();
     } catch (error) {
-        console.error('Error during page load:', error);
+        console.error(error);
     }
 }, { passive: true });
 
@@ -972,7 +972,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         portfolioApp = new PortfolioApp();
         await portfolioApp.init();
     } catch (error) {
-        console.error('Error during initialization:', error);
+        console.error(error);
     }
 });
 

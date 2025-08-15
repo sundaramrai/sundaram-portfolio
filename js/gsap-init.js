@@ -381,13 +381,8 @@ document.addEventListener('DOMContentLoaded', () => {
         createOptimizedBackgroundElements();
         setupOptimizedScrollSpy();
         setupHashNavigation();
-
-        if (!gsap.plugins.ScrollToPlugin) {
-            console.warn('ScrollToPlugin not loaded. Hash navigation may not work smoothly.');
-        }
-
     } catch (error) {
-        console.error('Animation initialization failed:', error);
+        console.error(error);
     }
 
     if (performance.mark) {
