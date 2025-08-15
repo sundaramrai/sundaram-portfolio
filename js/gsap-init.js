@@ -1,4 +1,7 @@
-gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+gsap.registerPlugin(ScrollTrigger);
+if (gsap.plugins?.ScrollToPlugin) {
+    gsap.registerPlugin(ScrollToPlugin);
+}
 
 window.debounce = (func, wait) => {
     let timeout;
