@@ -855,19 +855,6 @@ class ContactFormManager {
     }
 }
 
-class ServiceWorkerManager {
-    static async register() {
-        if (!('serviceWorker' in navigator)) return;
-
-        try {
-            const registration = await navigator.serviceWorker.register('/service-worker.js');
-            console.log(registration.scope);
-        } catch (error) {
-            console.error(error);
-        }
-    }
-}
-
 class PortfolioApp {
     constructor() {
         this.typeWriter = null;
@@ -890,8 +877,6 @@ class PortfolioApp {
         this.cursorManager.init();
 
         this.setupCursorTrail();
-
-        await ServiceWorkerManager.register();
 
         this.setupResizeHandler();
     }
