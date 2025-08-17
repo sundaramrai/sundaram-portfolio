@@ -383,17 +383,24 @@
       <div class="grid md:grid-cols-2 gap-8">
         <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden project-card card-hover-effect">
           <div class="h-48 bg-gradient-to-r from-purple-400 to-pink-500 relative overflow-hidden">
-            <div class="absolute inset-0 flex items-center justify-center">
-              <i class="fas fa-gavel text-white text-5xl opacity-50"></i>
+            <div class="absolute inset-0">
+              <img src="./assets/images/projects/juris/juris-preview.png" alt="Juris AI Preview"
+                class="w-full h-full object-cover object-top opacity-90" loading="lazy" />
             </div>
             <div class="absolute top-4 right-4">
               <div class="flex space-x-2">
-                <a href="#"
-                  class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center text-white hover:bg-white/40 transition-colors">
+                <a href="https://github.com/sundaramrai/Juris-Frontend"
+                  class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-white hover:bg-gray-400 transition-colors"
+                  title="Frontend GitHub" target="_blank" aria-label="Juris AI Frontend GitHub">
                   <i class="fab fa-github"></i>
                 </a>
-                <a href="#"
-                  class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center text-white hover:bg-white/40 transition-colors">
+                <a href="https://github.com/sundaramrai/Juris-Backend"
+                  class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-white hover:bg-gray-400 transition-colors"
+                  title="Backend GitHub" target="_blank" aria-label="Juris AI Backend GitHub">
+                  <i class="fab fa-github"></i>
+                </a>
+                <a href="https://juris-legal.vercel.app"
+                  class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-white hover:bg-gray-400 transition-colors">
                   <i class="fas fa-external-link-alt"></i>
                 </a>
               </div>
@@ -425,17 +432,18 @@
 
         <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden project-card card-hover-effect">
           <div class="h-48 bg-gradient-to-r from-blue-400 to-purple-500 relative overflow-hidden">
-            <div class="absolute inset-0 flex items-center justify-center">
-              <i class="fas fa-language text-white text-5xl opacity-50"></i>
+            <div class="absolute inset-0">
+              <img src="./assets/images/projects/lingoleap/lingoleap-preview.png" alt="LingoLeap Preview"
+                class="w-full h-full object-cover object-top opacity-90" loading="lazy" />
             </div>
             <div class="absolute top-4 right-4">
               <div class="flex space-x-2">
-                <a href="#"
-                  class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center text-white hover:bg-white/40 transition-colors">
+                <a href="https://github.com/sundaramrai/LingoLeap"
+                  class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-white hover:bg-gray-400 transition-colors">
                   <i class="fab fa-github"></i>
                 </a>
-                <a href="#"
-                  class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center text-white hover:bg-white/40 transition-colors">
+                <a href="https://lleap.vercel.app"
+                  class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-white hover:bg-gray-400 transition-colors">
                   <i class="fas fa-external-link-alt"></i>
                 </a>
               </div>
@@ -470,14 +478,18 @@
             <div class="absolute inset-0 flex items-center justify-center">
               <i class="fas fa-user-check text-white text-5xl opacity-50"></i>
             </div>
+            <!-- <div class="absolute inset-0">
+              <img src="./assets/images/projects/classtrack/classtrack-preview.png" alt="ClassTrack Preview"
+                class="w-full h-full object-cover object-top opacity-90" loading="lazy" />
+            </div> -->
             <div class="absolute top-4 right-4">
               <div class="flex space-x-2">
-                <a href="#"
-                  class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center text-white hover:bg-white/40 transition-colors">
+                <a href="https://github.com/sundaramrai/ClassTrack"
+                  class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-white hover:bg-gray-400 transition-colors">
                   <i class="fab fa-github"></i>
                 </a>
                 <a href="#"
-                  class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center text-white hover:bg-white/40 transition-colors">
+                  class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-white hover:bg-gray-400 transition-colors">
                   <i class="fas fa-external-link-alt"></i>
                 </a>
               </div>
@@ -718,7 +730,7 @@
             <div>
               <label for="message"
                 class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Message</label>
-              <textarea id="message" name="message" rows="4"
+              <textarea id="message" name="message" style="height: 94px;"
                 class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100"
                 placeholder="Your message" required></textarea>
             </div>
