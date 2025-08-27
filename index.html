@@ -803,39 +803,45 @@
         </div>
 
         <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
-          <form id="contact-form" class="space-y-4">
-            <div>
-              <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Name</label>
-              <input type="text" id="name" name="name"
-                class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100"
-                placeholder="Your name" required>
-            </div>
-            <div>
-              <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Email</label>
-              <input type="email" id="email" name="email"
-                class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100"
-                placeholder="your@email.com" required>
-            </div>
-            <div>
-              <label for="message"
-                class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Message</label>
-              <textarea id="message" name="message" style="height: 94px; resize: none;"
-                class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100"
-                placeholder="Your message" required></textarea>
-            </div>
+          <form id="contact-form" class="space-y-6" autocomplete="off" novalidate aria-labelledby="contact-heading">
+            <fieldset>
+              <legend class="sr-only">Contact Form</legend>
+              <div class="form-floating-label mb-3">
+                <input type="text" id="name" name="name" required
+                  class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 peer"
+                  placeholder="Enter your name" aria-label="Your name" autocomplete="name" />
+                <label for="name"
+                  class="absolute left-4 top-3 text-sm text-gray-500 dark:text-gray-400 transition-all duration-200 pointer-events-none peer-placeholder-shown:top-3 peer-placeholder-shown:text-gray-400 peer-focus:-top-3 peer-focus:text-xs peer-focus:text-primary-500 bg-white dark:bg-gray-800 px-1">Name</label>
+              </div>
+              <div class="form-floating-label mb-3">
+                <input type="email" id="email" name="email" required
+                  class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 peer"
+                  placeholder="Enter your email" aria-label="Your email" autocomplete="email" />
+                <label for="email"
+                  class="absolute left-4 top-3 text-sm text-gray-500 dark:text-gray-400 transition-all duration-200 pointer-events-none peer-placeholder-shown:top-3 peer-placeholder-shown:text-gray-400 peer-focus:-top-3 peer-focus:text-xs peer-focus:text-primary-500 bg-white dark:bg-gray-800 px-1">Email</label>
+              </div>
+              <div class="form-floating-label">
+                <textarea id="message" name="message" required rows="4" style="min-height: 6rem;"
+                  class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 peer resize-none"
+                  placeholder="Enter your message" aria-label="Your message"></textarea>
+                <label for="message"
+                  class="absolute left-4 top-3 text-sm text-gray-500 dark:text-gray-400 transition-all duration-200 pointer-events-none peer-placeholder-shown:top-3 peer-placeholder-shown:text-gray-400 peer-focus:-top-3 peer-focus:text-xs peer-focus:text-primary-500 bg-white dark:bg-gray-800 px-1">Message</label>
+              </div>
+            </fieldset>
             <button type="submit"
-              class="w-full bg-primary-500 hover:bg-primary-600 text-white py-3 px-6 rounded-lg font-medium transition-colors flex items-center justify-center gap-2">
+              class="w-full bg-primary-500 hover:bg-primary-600 text-white py-3 px-6 rounded-lg font-medium transition-colors flex items-center justify-center gap-2 focus:outline-none focus:ring-2 focus:ring-primary-500"
+              aria-label="Send message">
               Send Message <i class="fas fa-paper-plane"></i>
             </button>
           </form>
-          <div id="form-status" class="mt-6 hidden">
+          <div id="form-status" class="mt-6 hidden" aria-live="polite">
             <div id="success-message"
-              class="p-4 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 rounded-lg hidden">
+              class="p-4 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 rounded-lg hidden items-center gap-2">
               <i class="fas fa-check-circle text-xl"></i>
               <span>Your message has been sent successfully! I'll get back to you soon.</span>
             </div>
             <div id="error-message"
-              class="p-4 bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-300 rounded-lg hidden">
+              class="p-4 bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-300 rounded-lg hidden items-center gap-2">
               <i class="fas fa-exclamation-circle text-xl"></i>
               <span>There was an error sending your message. Please try again later.</span>
             </div>
