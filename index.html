@@ -118,7 +118,7 @@
   </script>
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
-    rel="stylesheet">
+    rel="stylesheet" />
   <link rel="stylesheet" href="./css/style.css" />
 </head>
 
@@ -142,21 +142,22 @@
       </div>
 
       <div class="hidden md:flex items-center space-x-8">
-        <a href="#home" class="nav-link hover:text-primary-500 transition-colors">Home</a>
-        <a href="#experience" class="nav-link hover:text-primary-500 transition-colors">Experience</a>
-        <a href="#projects" class="nav-link hover:text-primary-500 transition-colors">Projects</a>
-        <a href="#skills" class="nav-link hover:text-primary-500 transition-colors">Skills</a>
-        <a href="#contact" class="nav-link hover:text-primary-500 transition-colors">Contact</a>
+        <a class="nav-link hover:text-primary-500 transition-colors" href="#home">Home</a>
+        <a class="nav-link hover:text-primary-500 transition-colors" href="#experience">Experience</a>
+        <a class="nav-link hover:text-primary-500 transition-colors" href="#projects">Projects</a>
+        <a class="nav-link hover:text-primary-500 transition-colors" href="#skills">Skills</a>
+        <a class="nav-link hover:text-primary-500 transition-colors" href="#contact">Contact</a>
       </div>
 
       <div class="flex items-center space-x-6">
         <button onclick="toggleTheme()"
-          class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors focus:outline-none">
+          class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors focus:outline-none"
+          aria-label="Toggle theme">
           <i class="fas fa-moon dark:hidden text-xl"></i>
           <i class="fas fa-sun hidden dark:inline text-xl"></i>
         </button>
 
-        <button id="mobile-menu-button" class="md:hidden text-2xl">
+        <button id="mobile-menu-button" class="md:hidden text-2xl" aria-label="Open mobile menu">
           <i class="fas fa-bars"></i>
         </button>
       </div>
@@ -166,26 +167,27 @@
   <div id="mobile-menu"
     class="fixed inset-0 bg-white dark:bg-gray-900 z-40 transform translate-x-full transition-transform duration-300 md:hidden">
     <div class="flex justify-end p-6">
-      <button id="close-menu" class="text-2xl">
+      <button id="close-menu" class="text-2xl" aria-label="Close mobile menu">
         <i class="fas fa-times"></i>
       </button>
     </div>
     <div class="flex flex-col items-center space-y-8 pt-12">
-      <a href="#home" class="text-xl font-medium hover:text-primary-500 transition-colors">Home</a>
-      <a href="#experience" class="text-xl font-medium hover:text-primary-500 transition-colors">Experience</a>
-      <a href="#projects" class="text-xl font-medium hover:text-primary-500 transition-colors">Projects</a>
-      <a href="#skills" class="text-xl font-medium hover:text-primary-500 transition-colors">Skills</a>
-      <a href="#contact" class="text-xl font-medium hover:text-primary-500 transition-colors">Contact</a>
+      <a class="text-xl font-medium hover:text-primary-500 transition-colors" href="#home">Home</a>
+      <a class="text-xl font-medium hover:text-primary-500 transition-colors" href="#experience">Experience</a>
+      <a class="text-xl font-medium hover:text-primary-500 transition-colors" href="#projects">Projects</a>
+      <a class="text-xl font-medium hover:text-primary-500 transition-colors" href="#skills">Skills</a>
+      <a class="text-xl font-medium hover:text-primary-500 transition-colors" href="#contact">Contact</a>
       <div class="flex space-x-6 mt-12 pt-6 border-t border-gray-200 dark:border-gray-700">
-        <a href="mailto:sundaramrai02@gmail.com" class="hover:text-primary-500 transition-colors" title="Email">
+        <a class="hover:text-primary-500 transition-colors" href="mailto:sundaramrai02@gmail.com" title="Email"
+          aria-label="Email">
           <i class="fas fa-envelope text-xl"></i>
         </a>
-        <a href="https://github.com/sundaramrai" title="GitHub" class="hover:text-primary-500 transition-colors"
-          target="_blank">
+        <a class="hover:text-primary-500 transition-colors" href="https://github.com/sundaramrai" title="GitHub"
+          target="_blank" rel="noopener noreferrer" aria-label="GitHub">
           <i class="fab fa-github text-xl"></i>
         </a>
-        <a href="https://linkedin.com/in/sundaramrai" class="hover:text-primary-500 transition-colors" title="LinkedIn"
-          target="_blank">
+        <a class="hover:text-primary-500 transition-colors" href="https://linkedin.com/in/sundaramrai" title="LinkedIn"
+          target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
           <i class="fab fa-linkedin text-xl"></i>
         </a>
       </div>
@@ -384,23 +386,24 @@
         <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden project-card card-hover-effect">
           <div class="h-48 bg-gradient-to-r from-purple-400 to-pink-500 relative overflow-hidden">
             <div class="absolute inset-0">
-              <img src="./assets/images/projects/juris/juris-preview.png" alt="Juris AI Preview"
-                class="w-full h-full object-cover object-top opacity-90" loading="lazy" />
+              <img class="w-full h-full object-cover object-top opacity-90"
+                src="./assets/images/projects/juris/juris-preview.png" alt="Juris AI Preview" loading="lazy" />
             </div>
             <div class="absolute top-4 right-4">
               <div class="flex space-x-2">
-                <a href="https://github.com/sundaramrai/Juris-Frontend"
-                  class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-white hover:bg-gray-400 transition-colors"
-                  title="Frontend GitHub" target="_blank" aria-label="Juris AI Frontend GitHub">
+                <a class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-white hover:bg-gray-400 transition-colors"
+                  href="https://github.com/sundaramrai/Juris-Frontend" title="Frontend GitHub" target="_blank"
+                  rel="noopener noreferrer" aria-label="Juris AI Frontend GitHub">
                   <i class="fab fa-github"></i>
                 </a>
-                <a href="https://github.com/sundaramrai/Juris-Backend"
-                  class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-white hover:bg-gray-400 transition-colors"
-                  title="Backend GitHub" target="_blank" aria-label="Juris AI Backend GitHub">
+                <a class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-white hover:bg-gray-400 transition-colors"
+                  href="https://github.com/sundaramrai/Juris-Backend" title="Backend GitHub" target="_blank"
+                  rel="noopener noreferrer" aria-label="Juris AI Backend GitHub">
                   <i class="fab fa-github"></i>
                 </a>
-                <a href="https://juris-legal.vercel.app" target="_blank"
-                  class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-white hover:bg-gray-400 transition-colors">
+                <a class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-white hover:bg-gray-400 transition-colors"
+                  href="https://juris-legal.vercel.app" target="_blank" rel="noopener noreferrer" title="Juris AI Live"
+                  aria-label="Juris AI Live">
                   <i class="fas fa-external-link-alt"></i>
                 </a>
               </div>
@@ -430,17 +433,19 @@
         <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden project-card card-hover-effect">
           <div class="h-48 bg-gradient-to-r from-blue-400 to-purple-500 relative overflow-hidden">
             <div class="absolute inset-0">
-              <img src="./assets/images/projects/lingoleap/lingoleap-preview.png" alt="LingoLeap Preview"
-                class="w-full h-full object-cover object-top opacity-90" loading="lazy" />
+              <img class="w-full h-full object-cover object-top opacity-90"
+                src="./assets/images/projects/lingoleap/lingoleap-preview.png" alt="LingoLeap Preview" loading="lazy" />
             </div>
             <div class="absolute top-4 right-4">
               <div class="flex space-x-2">
-                <a href="https://github.com/sundaramrai/LingoLeap" target="_blank"
-                  class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-white hover:bg-gray-400 transition-colors">
+                <a class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-white hover:bg-gray-400 transition-colors"
+                  href="https://github.com/sundaramrai/LingoLeap" target="_blank" rel="noopener noreferrer"
+                  title="LingoLeap GitHub" aria-label="LingoLeap GitHub">
                   <i class="fab fa-github"></i>
                 </a>
-                <a href="https://lleap.vercel.app" target="_blank"
-                  class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-white hover:bg-gray-400 transition-colors">
+                <a class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-white hover:bg-gray-400 transition-colors"
+                  href="https://lleap.vercel.app" target="_blank" rel="noopener noreferrer" title="LingoLeap Live"
+                  aria-label="LingoLeap Live">
                   <i class="fas fa-external-link-alt"></i>
                 </a>
               </div>
@@ -470,7 +475,7 @@
         <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden project-card card-hover-effect">
           <div class="h-48 bg-gradient-to-r from-green-400 to-teal-500 relative overflow-hidden">
             <div class="absolute inset-0 flex items-center justify-center">
-              <i class="fas fa-user-check text-white text-5xl opacity-50"></i>
+              <i class="fas fa-user-check text-white text-5xl opacity-50" aria-label="ClassTrack Icon"></i>
             </div>
             <!-- <div class="absolute inset-0">
               <img src="./assets/images/projects/classtrack/classtrack-preview.png" alt="ClassTrack Preview"
@@ -478,12 +483,14 @@
             </div> -->
             <div class="absolute top-4 right-4">
               <div class="flex space-x-2">
-                <a href="https://github.com/sundaramrai/ClassTrack" target="_blank"
-                  class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-white hover:bg-gray-400 transition-colors">
+                <a class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-white hover:bg-gray-400 transition-colors"
+                  href="https://github.com/sundaramrai/ClassTrack" target="_blank" rel="noopener noreferrer"
+                  title="ClassTrack GitHub" aria-label="ClassTrack GitHub">
                   <i class="fab fa-github"></i>
                 </a>
-                <a href="#" target="_blank"
-                  class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-white hover:bg-gray-400 transition-colors">
+                <a class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-white hover:bg-gray-400 transition-colors"
+                  href="#" target="_blank" rel="noopener noreferrer" title="ClassTrack Live"
+                  aria-label="ClassTrack Live">
                   <i class="fas fa-external-link-alt"></i>
                 </a>
               </div>
@@ -514,13 +521,14 @@
         <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden project-card card-hover-effect">
           <div class="h-48 bg-gradient-to-r from-green-400 to-blue-500 relative overflow-hidden">
             <div class="absolute inset-0">
-              <img src="./assets/images/projects/greenory/greenory-preview.png" alt="Greenory Preview"
-                class="w-full h-full object-cover object-top opacity-90" loading="lazy" />
+              <img class="w-full h-full object-cover object-top opacity-90"
+                src="./assets/images/projects/greenory/greenory-preview.png" alt="Greenory Preview" loading="lazy" />
             </div>
             <div class="absolute top-4 right-4">
               <div class="flex space-x-2">
-                <a href="https://greenory.onrender.com/" target="_blank"
-                  class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-white hover:bg-gray-400 transition-colors">
+                <a class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-white hover:bg-gray-400 transition-colors"
+                  href="https://greenory.onrender.com/" target="_blank" rel="noopener noreferrer" title="Greenory Live"
+                  aria-label="Greenory Live">
                   <i class="fas fa-external-link-alt"></i>
                 </a>
               </div>
@@ -553,23 +561,25 @@
             class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden project-card card-hover-effect w-full max-w-xl">
             <div class="h-48 bg-gradient-to-r from-purple-400 to-indigo-500 relative overflow-hidden">
               <div class="absolute inset-0">
-                <img src="./assets/images/projects/tascmaster/tascmaster-preview.png" alt="TascMaster Preview"
-                  class="w-full h-full object-cover object-top opacity-90" loading="lazy" />
+                <img class="w-full h-full object-cover object-top opacity-90"
+                  src="./assets/images/projects/tascmaster/tascmaster-preview.png" alt="TascMaster Preview"
+                  loading="lazy" />
               </div>
               <div class="absolute top-4 right-4">
                 <div class="flex space-x-2">
-                  <a href="https://github.com/sundaramrai/my-todo-backend" target="_blank" title="TascMaster Backend"
-                    aria-label="TascMaster Backend"
-                    class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-white hover:bg-gray-400 transition-colors">
+                  <a class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-white hover:bg-gray-400 transition-colors"
+                    href="https://github.com/sundaramrai/my-todo-backend" target="_blank" rel="noopener noreferrer"
+                    title="TascMaster Backend" aria-label="TascMaster Backend">
                     <i class="fab fa-github"></i>
                   </a>
-                  <a href="https://github.com/sundaramrai/angular-todo" target="_blank" title="TascMaster Frontend"
-                    aria-label="TascMaster Frontend"
-                    class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-white hover:bg-gray-400 transition-colors">
+                  <a class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-white hover:bg-gray-400 transition-colors"
+                    href="https://github.com/sundaramrai/angular-todo" target="_blank" rel="noopener noreferrer"
+                    title="TascMaster Frontend" aria-label="TascMaster Frontend">
                     <i class="fab fa-github"></i>
                   </a>
-                  <a href="https://tascmaster.vercel.app/" target="_blank"
-                    class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-white hover:bg-gray-400 transition-colors">
+                  <a class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-white hover:bg-gray-400 transition-colors"
+                    href="https://tascmaster.vercel.app/" target="_blank" rel="noopener noreferrer"
+                    title="TascMaster Live" aria-label="TascMaster Live">
                     <i class="fas fa-external-link-alt"></i>
                   </a>
                 </div>
@@ -608,7 +618,6 @@
 
       <div class="max-w-4xl mx-auto">
         <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 card-hover-effect">
-
           <div class="space-y-6">
             <div>
               <h4 class="text-sm text-gray-600 dark:text-gray-400 mb-3 flex items-center gap-2">
@@ -620,24 +629,25 @@
                   Python
                 </span>
                 <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded flex items-center">
-                  <img src="https://www.svgrepo.com/show/374146/typescript-official.svg" class="w-4 h-4 mr-1"
+                  <img class="w-4 h-4 mr-1" src="https://www.svgrepo.com/show/374146/typescript-official.svg"
                     alt="TypeScript" />
                   TypeScript
                 </span>
-                <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded">
+                <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded flex items-center gap-1">
                   <i class="fa-brands fa-js" style="color: #f7df1e"></i>
                   JavaScript
                 </span>
                 <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded flex items-center">
-                  <img src="https://img.icons8.com/?size=256&id=40669&format=png" class="w-4 h-4 mr-1" alt="C++" />
+                  <img class="w-4 h-4 mr-1" src="https://img.icons8.com/?size=256&id=40669&format=png" alt="C++" />
                   C++
                 </span>
-                <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded">
+                <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded flex items-center gap-1">
                   <i class="fa-brands fa-html5" style="color: #e34f26"></i>
                   HTML
                 </span>
-                <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded">
-                  <i class="fa-brands fa-css3" style="color: #1572b6"></i> CSS
+                <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded flex items-center gap-1">
+                  <i class="fa-brands fa-css3" style="color: #1572b6"></i>
+                  CSS
                 </span>
                 <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded flex items-center gap-1">
                   <i class="fas fa-database" style="color: #336791"></i>
@@ -651,24 +661,24 @@
                 <i class="fas fa-layer-group text-primary-500"></i> Frameworks & Libraries
               </h4>
               <div class="flex flex-wrap gap-2">
-                <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded">
+                <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded flex items-center gap-1">
                   <i class="fa-brands fa-react" style="color: #74c0fc"></i>
                   React.js
                 </span>
                 <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded flex items-center gap-1">
-                  <img src="https://www.svgrepo.com/show/354113/nextjs-icon.svg" class="w-4 h-4" alt="Next.js" />
+                  <img class="w-4 h-4" src="https://www.svgrepo.com/show/354113/nextjs-icon.svg" alt="Next.js" />
                   Next.js
                 </span>
-                <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded">
+                <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded flex items-center gap-1">
                   <i class="fa-brands fa-angular" style="color: #dd0031"></i>
                   Angular
                 </span>
-                <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded inline-flex items-center">
-                  <img src="https://www.svgrepo.com/show/354431/tailwindcss-icon.svg" class="w-4 h-4 mr-1"
+                <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded flex items-center">
+                  <img class="w-4 h-4 mr-1" src="https://www.svgrepo.com/show/354431/tailwindcss-icon.svg"
                     alt="Tailwind CSS" />
                   Tailwind CSS
                 </span>
-                <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded">
+                <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded flex items-center gap-1">
                   <i class="fa-brands fa-bootstrap" style="color: #7952b3"></i>
                   Bootstrap
                 </span>
@@ -677,7 +687,7 @@
                   Node.js
                 </span>
                 <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded flex items-center">
-                  <img src="https://www.svgrepo.com/show/373554/django.svg" class="w-4 h-4 mr-1" alt="Django" />
+                  <img class="w-4 h-4 mr-1" src="https://www.svgrepo.com/show/373554/django.svg" alt="Django" />
                   Django
                 </span>
               </div>
@@ -688,28 +698,28 @@
                 <i class="fas fa-database text-primary-500"></i> Databases & Tools
               </h4>
               <div class="flex flex-wrap gap-2">
-                <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded inline-flex items-center">
-                  <img src="https://www.svgrepo.com/show/473731/mysql.svg" class="w-4 h-4 mr-1" alt="MySQL" />
+                <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded flex items-center">
+                  <img class="w-4 h-4 mr-1" src="https://www.svgrepo.com/show/473731/mysql.svg" alt="MySQL" />
                   MySQL
                 </span>
-                <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded inline-flex items-center">
-                  <img src="https://www.svgrepo.com/show/439231/mongodb.svg" class="w-4 h-4 mr-1" alt="MongoDB" />
+                <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded flex items-center">
+                  <img class="w-4 h-4 mr-1" src="https://www.svgrepo.com/show/439231/mongodb.svg" alt="MongoDB" />
                   MongoDB
                 </span>
-                <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded inline-flex items-center">
-                  <img src="https://www.svgrepo.com/show/373595/firebase.svg" class="w-4 h-4 mr-1" alt="Firebase" />
+                <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded flex items-center">
+                  <img class="w-4 h-4 mr-1" src="https://www.svgrepo.com/show/373595/firebase.svg" alt="Firebase" />
                   Firebase
                 </span>
-                <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded inline-flex items-center">
-                  <img src="https://www.svgrepo.com/show/452210/git.svg" class="w-4 h-4 mr-1" alt="Git" />
+                <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded flex items-center">
+                  <img class="w-4 h-4 mr-1" src="https://www.svgrepo.com/show/452210/git.svg" alt="Git" />
                   Git
                 </span>
-                <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded inline-flex items-center">
+                <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded flex items-center">
                   <i class="fab fa-github" style="color: #333"></i>
                   <span class="ml-1">GitHub</span>
                 </span>
                 <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded flex items-center">
-                  <img src="https://www.svgrepo.com/show/354202/postman-icon.svg" class="w-4 h-4 mr-1" alt="Postman" />
+                  <img class="w-4 h-4 mr-1" src="https://www.svgrepo.com/show/354202/postman-icon.svg" alt="Postman" />
                   Postman
                 </span>
                 <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded flex items-center gap-1">
@@ -717,11 +727,11 @@
                   WordPress
                 </span>
                 <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded flex items-center">
-                  <img src="https://www.svgrepo.com/show/452202/figma.svg" class="w-4 h-4 mr-1" alt="Figma" />
+                  <img class="w-4 h-4 mr-1" src="https://www.svgrepo.com/show/452202/figma.svg" alt="Figma" />
                   Figma
                 </span>
                 <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded flex items-center">
-                  <img src="https://www.svgrepo.com/show/378475/vercel-fill.svg" class="w-4 h-4 mr-1" alt="Vercel" />
+                  <img class="w-4 h-4 mr-1" src="https://www.svgrepo.com/show/378475/vercel-fill.svg" alt="Vercel" />
                   Vercel
                 </span>
                 <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded flex items-center gap-1">
@@ -846,45 +856,44 @@
         </div>
 
         <div class="flex flex-wrap space-x-4 md:space-x-8">
-          <a href="#home"
-            class="text-gray-600 dark:text-gray-400 hover:text-primary-500 transition-colors nav-link-underline">Home</a>
-          <a href="#experience"
-            class="text-gray-600 dark:text-gray-400 hover:text-primary-500 transition-colors nav-link-underline">Experience</a>
-          <a href="#projects"
-            class="text-gray-600 dark:text-gray-400 hover:text-primary-500 transition-colors nav-link-underline">Projects</a>
-          <a href="#skills"
-            class="text-gray-600 dark:text-gray-400 hover:text-primary-500 transition-colors nav-link-underline">Skills</a>
-          <a href="#contact"
-            class="text-gray-600 dark:text-gray-400 hover:text-primary-500 transition-colors nav-link-underline">Contact</a>
+          <a class="text-gray-600 dark:text-gray-400 hover:text-primary-500 transition-colors nav-link-underline"
+            href="#home">Home</a>
+          <a class="text-gray-600 dark:text-gray-400 hover:text-primary-500 transition-colors nav-link-underline"
+            href="#experience">Experience</a>
+          <a class="text-gray-600 dark:text-gray-400 hover:text-primary-500 transition-colors nav-link-underline"
+            href="#projects">Projects</a>
+          <a class="text-gray-600 dark:text-gray-400 hover:text-primary-500 transition-colors nav-link-underline"
+            href="#skills">Skills</a>
+          <a class="text-gray-600 dark:text-gray-400 hover:text-primary-500 transition-colors nav-link-underline"
+            href="#contact">Contact</a>
         </div>
       </div>
 
-      <hr class="my-8 border-gray-200 dark:border-gray-700">
-
+      <hr class="my-8 border-gray-200 dark:border-gray-700" />
       <div class="flex flex-col md:flex-row justify-between items-center">
         <p class="text-sm text-gray-600 dark:text-gray-400">© 2025 Sundaram Rai. All rights reserved.</p>
-
         <div class="flex space-x-6 mt-4 md:mt-0">
-          <a href="mailto:sundaramrai02@gmail.com"
-            class="text-gray-600 dark:text-gray-400 hover:text-primary-500 transition-colors" title="Email">
+          <a class="text-gray-600 dark:text-gray-400 hover:text-primary-500 transition-colors"
+            href="mailto:sundaramrai02@gmail.com" title="Email" aria-label="Email">
             <i class="fas fa-envelope"></i>
           </a>
-          <a href="https://github.com/sundaramrai" title="GitHub"
-            class="text-gray-600 dark:text-gray-400 hover:text-primary-500 transition-colors" target="_blank">
+          <a class="text-gray-600 dark:text-gray-400 hover:text-primary-500 transition-colors"
+            href="https://github.com/sundaramrai" title="GitHub" target="_blank" rel="noopener noreferrer"
+            aria-label="GitHub">
             <i class="fab fa-github"></i>
           </a>
-          <a href="https://linkedin.com/in/sundaramrai"
-            class="text-gray-600 dark:text-gray-400 hover:text-primary-500 transition-colors" title="LinkedIn"
-            target="_blank">
+          <a class="text-gray-600 dark:text-gray-400 hover:text-primary-500 transition-colors"
+            href="https://linkedin.com/in/sundaramrai" title="LinkedIn" target="_blank" rel="noopener noreferrer"
+            aria-label="LinkedIn">
             <i class="fab fa-linkedin"></i>
           </a>
         </div>
       </div>
     </div>
   </footer>
-
   <button id="backToTopButton"
-    class="fixed bottom-4 right-4 p-3 bg-primary-500 text-white rounded-full shadow-lg hover:bg-primary-600 transition-colors focus:outline-none opacity-0 invisible">
+    class="fixed bottom-4 right-4 p-3 bg-primary-500 text-white rounded-full shadow-lg hover:bg-primary-600 transition-colors focus:outline-none opacity-0 invisible"
+    aria-label="Back to top">
     <i class="fas fa-arrow-up"></i>
   </button>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
