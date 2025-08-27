@@ -106,8 +106,11 @@ body {
 .form-floating-label input,
 .form-floating-label textarea {
     height: 56px;
-    padding-top: 24px;
     padding-bottom: 0;
+}
+
+.form-floating-label textarea {
+    min-height: 6rem;
 }
 
 .form-floating-label label {
