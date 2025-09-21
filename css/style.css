@@ -54,29 +54,6 @@ body {
     opacity: 1;
 }
 
-.form-floating-label {
-    position: relative;
-}
-
-.form-floating-label label {
-    position: absolute;
-    top: 16px;
-    left: 16px;
-    font-size: 12px;
-    color: #6b7280;
-    transition: all 0.2s ease;
-    opacity: 0;
-    transform: translateY(-10px);
-}
-
-.form-floating-label input:focus~label,
-.form-floating-label input:not(:placeholder-shown)~label,
-.form-floating-label textarea:focus~label,
-.form-floating-label textarea:not(:placeholder-shown)~label {
-    opacity: 1;
-    transform: translateY(0);
-}
-
 .nav-link-underline {
     position: relative;
 }
