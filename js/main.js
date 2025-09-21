@@ -13,7 +13,6 @@ const debounce = window.debounce || ((fn, d) => {
     let t; return (...a) => { clearTimeout(t); t = setTimeout(() => fn(...a), d); };
 });
 
-// Replace $ and $$ with _$ and _$$ to avoid conflicts
 const _$ = s => document.querySelector(s), _$$ = s => document.querySelectorAll(s);
 const DOM = {
     get body() { return document.body; }, get html() { return document.documentElement; },
@@ -173,15 +172,17 @@ class ScrollManager {
 
 class ThemeManager {
     constructor() { this.isDark = false; }
-    init = () => { this.loadTheme(); this.updateFavicon(); this.mediaQuery(); }
+    init = () => { this.loadTheme(); this.updateFavicon(); this.updateBgPattern(); this.mediaQuery(); }
     loadTheme = () => {
         let st = localStorage.getItem("darkMode"), pd = window.matchMedia("(prefers-color-scheme: dark)").matches;
-        this.isDark = st === "true" || (!st && pd); if (this.isDark) DOM.html.classList.add("dark");
+        this.isDark = st === "true" || (!st && pd);
+        if (this.isDark) DOM.html.classList.add("dark");
+        this.updateBgPattern();
     }
     toggle = () => {
         this.isDark = !this.isDark; DOM.html.classList.toggle("dark", this.isDark);
         localStorage.setItem("darkMode", this.isDark.toString());
-        this.animateToggle(); this.updateFavicon(); this.particles();
+        this.animateToggle(); this.updateFavicon(); this.particles(); this.updateBgPattern();
     }
     animateToggle = () => {
         let ti = DOM.html.classList.contains("dark") ? $(".fa-sun") : $(".fa-moon");
@@ -214,8 +215,22 @@ class ThemeManager {
             });
         }
     }
+    updateBgPattern = () => {
+        if (this.isDark) {
+            DOM.body.classList.remove("bg-dotted-light");
+            DOM.body.classList.add("bg-dotted-dark");
+        } else {
+            DOM.body.classList.remove("bg-dotted-dark");
+            DOM.body.classList.add("bg-dotted-light");
+        }
+    }
     mediaQuery = () => window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", e => {
-        if (!localStorage.getItem("darkMode")) { this.isDark = e.matches; DOM.html.classList.toggle("dark", this.isDark); this.updateFavicon(); }
+        if (!localStorage.getItem("darkMode")) {
+            this.isDark = e.matches;
+            DOM.html.classList.toggle("dark", this.isDark);
+            this.updateFavicon();
+            this.updateBgPattern();
+        }
     });
 }
 
