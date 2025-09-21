@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
   <title>Sundaram Rai - Portfolio</title>
   <meta name="description"
     content="Portfolio of Sundaram Rai, a driven software developer with expertise in full-stack development." />
@@ -15,105 +15,50 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
   <script src="./js/gsap-init.js"></script>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-  <script type="text/javascript">
-    (function () {
-      emailjs.init("STaOBifVaCgTkeiZH");
-    })();
-  </script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   <script>
+    emailjs.init("STaOBifVaCgTkeiZH");
     tailwind.config = {
       darkMode: "class",
       theme: {
         extend: {
           colors: {
             primary: {
-              50: '#E6F5FF',
-              100: '#CCE9FF',
-              200: '#99D3FF',
-              300: '#66BDFF',
-              400: '#33A7FF',
-              500: '#0091FF',
-              600: '#0074CC',
-              700: '#005799',
-              800: '#003A66',
-              900: '#001D33',
+              50: '#E6F5FF', 100: '#CCE9FF', 200: '#99D3FF', 300: '#66BDFF', 400: '#33A7FF',
+              500: '#0091FF', 600: '#0074CC', 700: '#005799', 800: '#003A66', 900: '#001D33'
             }
           },
           fontFamily: {
             sans: ['Inter', 'sans-serif'],
             heading: ['Poppins', 'sans-serif'],
           },
-          animation: {
-            'float': 'float 3s ease-in-out infinite',
-          },
-          keyframes: {
-            float: {
-              '0%, 100%': { transform: 'translateY(0)' },
-              '50%': { transform: 'translateY(-10px)' },
-            }
-          },
-          textColor: {
-            'gradient': 'transparent',
-          },
+          animation: { 'float': 'float 3s ease-in-out infinite' },
+          keyframes: { float: { '0%,100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-10px)' } } },
+          textColor: { 'gradient': 'transparent' },
         },
       },
       plugins: [
-        function ({ addUtilities }) {
-          const newUtilities = {
-            '.content-auto': {
-              'content-visibility': 'auto',
+        ({ addUtilities }) => addUtilities({
+          '.content-auto': { 'content-visibility': 'auto' },
+          '.text-gradient': { 'background-clip': 'text', 'background-image': 'linear-gradient(to right, #3b82f6, #a855f7)', 'color': 'transparent' },
+          '.card-hover-effect': { 'transition': 'all 300ms', 'transform': 'translateY(0)', '&:hover': { 'transform': 'translateY(-8px)' } },
+          '.nav-link': {
+            'position': 'relative',
+            '&::after': {
+              'content': '""', 'position': 'absolute', 'width': '100%', 'transform': 'scaleX(0)', 'height': '2px',
+              'bottom': '0', 'left': '0', 'background-color': '#3b82f6', 'transition': 'transform 300ms'
             },
-            '.text-gradient': {
-              'background-clip': 'text',
-              'background-image': 'linear-gradient(to right, #3b82f6, #a855f7)',
-              'color': 'transparent',
-            },
-            '.card-hover-effect': {
-              'transition-property': 'all',
-              'transition-duration': '300ms',
-              'transform': 'translateY(0)',
-              '&:hover': {
-                'transform': 'translateY(-8px)',
-              },
-            },
-            '.nav-link': {
-              'position': 'relative',
-              '&::after': {
-                'content': '""',
-                'position': 'absolute',
-                'width': '100%',
-                'transform': 'scaleX(0)',
-                'height': '2px',
-                'bottom': '0',
-                'left': '0',
-                'background-color': '#3b82f6',
-                'transition-property': 'transform',
-                'transition-duration': '300ms',
-              },
-              '&:hover::after': {
-                'transform': 'scaleX(1)',
-              },
-            },
-            '.section-divider': {
-              'position': 'relative',
-              'overflow': 'hidden',
-              'padding-top': '3rem',
-              'padding-bottom': '3rem',
-              '&::before': {
-                'content': '""',
-                'position': 'absolute',
-                'top': '0',
-                'left': '0',
-                'width': '100%',
-                'height': '4px',
-                'background-image': 'linear-gradient(to right, transparent, #3b82f6, transparent)',
-              },
-            },
-          };
-          addUtilities(newUtilities);
-        }
-      ],
+            '&:hover::after': { 'transform': 'scaleX(1)' }
+          },
+          '.section-divider': {
+            'position': 'relative', 'overflow': 'hidden', 'padding-top': '3rem', 'padding-bottom': '3rem',
+            '&::before': {
+              'content': '""', 'position': 'absolute', 'top': '0', 'left': '0', 'width': '100%', 'height': '4px',
+              'background-image': 'linear-gradient(to right, transparent, #3b82f6, transparent)'
+            }
+          }
+        })
+      ]
     };
   </script>
   <link
@@ -123,24 +68,23 @@
 </head>
 
 <body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-200 font-sans">
+  <!-- Loading Spinner -->
   <div id="loading" class="fixed inset-0 flex justify-center items-center bg-black bg-opacity-80 z-50">
     <div class="flex flex-col items-center">
       <div class="animate-spin rounded-full h-24 w-24 border-t-4 border-b-4 border-primary-500 mb-4"></div>
       <p class="text-white text-xl font-medium tracking-wider">Loading...</p>
     </div>
   </div>
-
+  <!-- Custom Cursor -->
   <div id="cursor"
     class="fixed w-6 h-6 rounded-full bg-primary-500 bg-opacity-50 pointer-events-none z-50 transform -translate-x-1/2 -translate-y-1/2 mix-blend-difference hidden md:block">
   </div>
-
+  <!-- Navbar -->
   <nav id="navbar"
     class="fixed top-0 left-0 w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg z-40 transition-all duration-300 border-b border-transparent">
     <div class="container mx-auto px-6 py-4 max-w-6xl flex justify-between items-center">
-      <div class="text-2xl font-bold font-heading">
-        <span class="text-primary-500">S</span>R<span class="text-primary-500">.</span>
-      </div>
-
+      <div class="text-2xl font-bold font-heading"><span class="text-primary-500">S</span>R<span
+          class="text-primary-500">.</span></div>
       <div class="hidden md:flex items-center space-x-8">
         <a class="nav-link hover:text-primary-500 transition-colors" href="#home">Home</a>
         <a class="nav-link hover:text-primary-500 transition-colors" href="#experience">Experience</a>
@@ -148,7 +92,6 @@
         <a class="nav-link hover:text-primary-500 transition-colors" href="#skills">Skills</a>
         <a class="nav-link hover:text-primary-500 transition-colors" href="#contact">Contact</a>
       </div>
-
       <div class="flex items-center space-x-6">
         <button onclick="toggleTheme()"
           class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors focus:outline-none"
@@ -156,20 +99,17 @@
           <i class="fas fa-moon dark:hidden text-xl"></i>
           <i class="fas fa-sun hidden dark:inline text-xl"></i>
         </button>
-
         <button id="mobile-menu-button" class="md:hidden text-2xl" aria-label="Open mobile menu">
           <i class="fas fa-bars"></i>
         </button>
       </div>
     </div>
   </nav>
-
+  <!-- Mobile Menu -->
   <div id="mobile-menu"
     class="fixed inset-0 bg-white dark:bg-gray-900 z-40 transform translate-x-full transition-transform duration-300 md:hidden">
     <div class="flex justify-end p-6">
-      <button id="close-menu" class="text-2xl" aria-label="Close mobile menu">
-        <i class="fas fa-times"></i>
-      </button>
+      <button id="close-menu" class="text-2xl" aria-label="Close mobile menu"><i class="fas fa-times"></i></button>
     </div>
     <div class="flex flex-col items-center space-y-8 pt-12">
       <a class="text-xl font-medium hover:text-primary-500 transition-colors" href="#home">Home</a>
@@ -178,18 +118,12 @@
       <a class="text-xl font-medium hover:text-primary-500 transition-colors" href="#skills">Skills</a>
       <a class="text-xl font-medium hover:text-primary-500 transition-colors" href="#contact">Contact</a>
       <div class="flex space-x-6 mt-12 pt-6 border-t border-gray-200 dark:border-gray-700">
-        <a class="hover:text-primary-500 transition-colors" href="mailto:sundaramrai02@gmail.com" title="Email"
-          aria-label="Email">
-          <i class="fas fa-envelope text-xl"></i>
-        </a>
-        <a class="hover:text-primary-500 transition-colors" href="https://github.com/sundaramrai" title="GitHub"
-          target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-          <i class="fab fa-github text-xl"></i>
-        </a>
-        <a class="hover:text-primary-500 transition-colors" href="https://linkedin.com/in/sundaramrai" title="LinkedIn"
-          target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-          <i class="fab fa-linkedin text-xl"></i>
-        </a>
+        <a class="hover:text-primary-500 transition-colors" href="mailto:sundaramrai02@gmail.com" aria-label="Email"><i
+            class="fas fa-envelope text-xl"></i></a>
+        <a class="hover:text-primary-500 transition-colors" href="https://github.com/sundaramrai" target="_blank"
+          rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github text-xl"></i></a>
+        <a class="hover:text-primary-500 transition-colors" href="https://linkedin.com/in/sundaramrai" target="_blank"
+          rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin text-xl"></i></a>
       </div>
     </div>
   </div>
@@ -834,18 +768,6 @@
               Send Message <i class="fas fa-paper-plane"></i>
             </button>
           </form>
-          <div id="form-status" class="mt-6 hidden" aria-live="polite">
-            <div id="success-message"
-              class="p-4 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 rounded-lg hidden items-center gap-2">
-              <i class="fas fa-check-circle text-xl"></i>
-              <span>Your message has been sent successfully! I'll get back to you soon.</span>
-            </div>
-            <div id="error-message"
-              class="p-4 bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-300 rounded-lg hidden items-center gap-2">
-              <i class="fas fa-exclamation-circle text-xl"></i>
-              <span>There was an error sending your message. Please try again later.</span>
-            </div>
-          </div>
         </div>
       </div>
     </section>
