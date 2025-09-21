@@ -75,15 +75,17 @@ body {
 }
 
 .bg-dotted-dark {
-    background-color: #000000;
-    background-image: radial-gradient(circle, rgba(255,255,255,0.2) 1.5px, transparent 1.5px);
-    background-size: 30px 30px;
+    background-color: #18181b;
+    background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.15) 1.5px, transparent 0);
+    background-size: 18px 18px;
     background-position: 0 0;
+    transition: background-color 0.3s, background-image 0.3s;
 }
 
 .bg-dotted-light {
-    background-color: #ffffff;
-    background-image: radial-gradient(circle at 1px 1px, rgba(0,0,0,0.35) 1px, transparent 0);
-    background-size: 20px 20px;
+    background-color: #f9fafb;
+    background-image: radial-gradient(circle at 1px 1px, rgba(0, 0, 0, 0.18) 1.5px, transparent 0);
+    background-size: 18px 18px;
     background-position: 0 0;
+    transition: background-color 0.3s, background-image 0.3s;
 }
