@@ -66,19 +66,14 @@ The site is designed as a single-page application (SPA) experience, though it's 
 
 | Area | Tool | Version |
 |---|---|---|
-|---|---|---|
 | Frontend | HTML | N/A |
 | Styling | Tailwind CSS | 3.x |
-|---|---|---|
 | Styling | PostCSS | 8.x |
 | Styling | Autoprefixer | 10.x |
-|---|---|---|
 | Animation | GSAP | 3.x |
 | Animation | ScrollTrigger (GSAP Plugin) | 3.x |
-|---|---|---|
 | Development Server | live-server | 1.x |
 | Deployment | Vercel | 32.x |
-|---|---|---|
 | Package Manager | npm | N/A |
 
 
@@ -120,12 +115,6 @@ npm install
 ## Configuration
 
 This project primarily uses `tailwind.config.js` and `postcss.config.js` for styling configuration, and `vercel.json` for deployment settings. There are no runtime environment variables that need to be set by the user for local development or deployment.
-
-| ENV | Description | Example |
-|---|---|---|
-|---|---|---|
-| N/A | No direct runtime environment variables are used. | N/A |
-
 
 
 *   **`tailwind.config.js`**: Configures Tailwind CSS, including `darkMode`, `content` paths, and custom `theme` extensions.
@@ -195,17 +184,12 @@ This command will deploy the current state of your project to Vercel, forcing a 
 
 | Command | Description |
 |---|---|
-|---|---|
 | `start` | Starts a local development server using `live-server`. |
 | `test` | Placeholder for testing (currently echoes an error). |
-|---|---|
 | `build` | Compiles Tailwind CSS from `css/style.css` to `dist/style.css`. |
 | `build:watch` | Compiles Tailwind CSS and watches for changes. |
-|---|---|
 | `dev` | Starts the Vercel development server. |
 | `deploy` | Deploys the project to Vercel in production mode. |
-|---|---|
-
 
 
 ## Roadmap
